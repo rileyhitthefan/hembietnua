@@ -44,8 +44,8 @@ Các bước sau đây hỗ trợ tạo ứng dụng tạo hình ảnh cho phép
 Sau khi ứng dụng tạo ra hình ảnh, bạn có thể yêu cầu hình ảnh khác bằng cách chọn Retry ở góc phải bên trên hộp tạo ảnh.
 {{% /notice %}}
 
-#### Tạo snapshots (Không bắt buộc)
-6. (**Không bắt buộc**) Chọn icon camera -- nút **Snapshot**  để lưu lại snapshot yêu cầu của bạn và output của AI.
+#### Tạo snapshots (Tuỳ chọn)
+6. (**Tuỳ chọn**) Chọn icon camera -- nút **Snapshot**  để lưu lại snapshot yêu cầu của bạn và output của AI.
 
    - Snapshot được lưu trong **My snapshots**.
    - Bạn có thể sao chép đường dẫn chia sẽ của các snapshots.
@@ -53,17 +53,17 @@ Sau khi ứng dụng tạo ra hình ảnh, bạn có thể yêu cầu hình ản
 ![pr](/images/1-PartyRock/009-PartyRock.png)
 
 {{% notice warning %}}
-Đừng bao giờ chia sẽ các thông tin cá nhân nhạy cảm trong snapshot hoặc PartyRock.
+Đừng bao giờ chia sẻ các thông tin cá nhân nhạy cảm trong snapshot hoặc PartyRock.
 {{% /notice %}}
 
-7. (**Không bắt buộc**) Chọn nút **Snapshots** ở đầu trang
+7. (**Tuỳ chọn**) Chọn nút **Snapshots** ở đầu trang
 
    - Bạn có thể xem lại hoặc xoá các snapshots ở đây.
 
 ![pr](/images/1-PartyRock/010-PartyRock.png)
 
-#### Chế độ riêng tư (Không bắt buộc)
-8. (**Không bắt buộc**) Bạn có thể xem lại các ứng dụng đã tạo trong mục **Apps** của mục lục.
-9. (**Không bắt buộc**) Để chỉnh chế độ riêng tư, vào editor của ứng dụng mong muốn và chọn **public**, sau đó chọn **Make private**.
+#### Chế độ riêng tư (Tuỳ chọn)
+8. (**Tuỳ chọn**) Bạn có thể xem lại các ứng dụng đã tạo trong mục **Apps** của mục lục.
+9. (**Tuỳ chọn**) Để chỉnh chế độ riêng tư, vào editor của ứng dụng mong muốn và chọn **public**, sau đó chọn **Make private**.
 
 ![pr](/images/1-PartyRock/011-PartyRock.png)

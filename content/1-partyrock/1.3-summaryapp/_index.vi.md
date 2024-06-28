@@ -26,18 +26,18 @@ Các bước sau đây hướng dẫn sử dụng tiện ích **User input** và
 
 ![pr](/images/1-PartyRock/013-PartyRock.png)
 
-4. Replace the placeholder title with `Content Summarizer`
+4. Đổi tên ứng dụng thành `Content Summarizer`
 
 ![pr](/images/1-PartyRock/014-PartyRock.png)
 
-#### Add User Input and Static Text widgets
-5. Select the **+ Add widget** button, then select **Static Text**
+#### Thêm tiện tính User input và Text generation
+5. Chọn nút **+ Add widget**, chọn mục **Static Text**
 
 ![pr](/images/1-PartyRock/015-PartyRock.png)
 
-6. Edit the Static Text widget’s properties.
-   - Set Widget title to `Welcome`
-   - Set Content to:
+6. Sửa các đặc tính của Static Text.
+   - Đặt tên tiện ích `Welcome`
+   - Đổi Content:
    
         ```command
         # Welcome to the Content Summarizer application!
@@ -49,51 +49,51 @@ Các bước sau đây hướng dẫn sử dụng tiện ích **User input** và
 
         ## WARNING: Never share sensitive information when building or using a PartyRock app. This includes personal information and internal company information.
         ```
-   - Adjust the height of the widget by dragging the resize handle in its lower right corner (make sure all content is visible on screen by default)
-   - Select the Save button
+   - Có thể điều chỉnh kích cỡ của các tiện ích bằng cách kéo từ góc phải bên dưới ô tiện ích.
+   - Bấm **Save**
 
 ![pr](/images/1-PartyRock/016-PartyRock.png)
 
 {{% notice note %}}
-The number signs in the text above are used to represent headings. The Static Text widget uses **Markdown** to indicate text styles. Please see the included Markdown basics guide to learn more.
+Tiện ích Static Text dùng ngôn ngữ **Markdown** để hiển thị nội dung.
 {{% /notice %}}
 
-7. Select the **+ Add widget** button, then select **User Input**
+7. Chọn nút **+ Add widget**, chọn **User Input**
 
 ![pr](/images/1-PartyRock/017-PartyRock.png)
 
-8. Set the User Input widget’s properties.
+8. Sửa các đặc tính của tiện ích User Input.
 
-   - Set **Widget title** to `Paste your content here`
-   - Set **Placeholder** to `Content to summarize (NO SENSITIVE CONTENT)`
-   - Select the **Save** button
+   - Đặt **Widget title** là `Paste your content here`
+   - Đặt **Placeholder** là `Content to summarize (NO SENSITIVE CONTENT)`
+   - Chọn **Save**.
 
 ![pr](/images/1-PartyRock/018-PartyRock.png)
 
-#### Add AI-powered widgets
-9. Select the **+ Add widget** button, then select **Text Generation**
+#### Thêm các tiện ích AI
+9. Chọn nút **+ Add widget**, sau đó chọn **Text Generation**
 
-10. Set the Text Generation widget’s properties.
-    - Set **Widget title** to `Detailed summary`
-    - Set **Model** to Comma`nd
-    - In the **Prompt** field, enter` Write a detailed summary based on this content:` , then enter the @ symbol to select the `Paste your content here` box as a source of content.
-    - Select the **Save** button
+10. Sửa các đặc tính của tiện ích Text Generation.
+    - Đặt **Widget title** là `Detailed summary`
+    - Đặt **Model** là `Command`
+    - Trong **Prompt**, nhập ` Write a detailed summary based on this content:`, nhập @ và chọn `Paste your content here` để đặt input người dùng làm nội dung gốc.
+    - Chọn **Save**.
 
 ![pr](/images/1-PartyRock/019-PartyRock.png)
 
-11. Adjust the width of the **Detailed summary** panel by dragging the resize handle in its lower right corner.
+11. Điều chỉnh kích cỡ của tiện ích **Detailed summary** bằng cách kéo từ góc phải bên dưới ô tiện ích.
+
+12. Thêm tiện ích **Text Generation**.
 
 ![pr](/images/1-PartyRock/020-PartyRock.png)
 
-12. Add a new **Text Generation** widget.
+13. Sửa các đặc tính của tiện ích Text Generation.
 
-13. Set the Text Generation widget’s properties.
-
-    - Set **Widget title** to `One-line summary`
-    - Set **Model** to `Claude 3 Sonnet`
-    - In the **Prompt** field, enter `Write a one-line summary based on this content:` , then enter the @ symbol to select the `Paste your content here` box as a source of content.
-    - Expand the **Advanced settings** section and set the **Temperature** field to *0.5*. This will let the model generate a random response each time it is run.
-    - Select the **Save** button
+    - Đặt **Widget title** là `One-line summary`
+    - Đặt **Model** là `Claude 3 Sonnet`
+    - Trong **Prompt**, nhập `Write a one-line summary based on this content:`, sau đó nhập **@** và chọn `Paste your content here` để đặt input người dùng làm nội dung gốc.
+    - Chọn vào mục **Advanced settings** và chỉnh **Temperature** thành **0.5** để tạo sự ngẫu nhiên cho mỗi câu trả lời của model.
+    - Chọn **Save**.
 
 ![pr](/images/1-PartyRock/021-PartyRock.png)
 
@@ -101,7 +101,7 @@ The number signs in the text above are used to represent headings. The Static Te
 
 
 #### Test the app
-14. Copy the following text and paste it into the **Paste your content here** box.
+14. Sao chép đoạn sau vào ô **Paste your content here**.
 
     ```command
     PartyRock, an Amazon Bedrock playground, is a shareable generative AI app building playground. Experiment with prompt engineering in a hands-on and fun way. In a short time, you can build, share, and remix apps, to get inspired while playing with generative AI. For example, you can:
@@ -122,5 +122,5 @@ The number signs in the text above are used to represent headings. The Static Te
 ![pr](/images/1-PartyRock/023-PartyRock.png)
 
 {{% notice warning %}}
-Never include sensitive information in PartyRock!
+Đừng bao giờ chia sẻ các thông tin cá nhân nhạy cảm trong snapshot hoặc PartyRock.
 {{% /notice %}}

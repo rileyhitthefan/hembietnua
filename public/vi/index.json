@@ -1,0 +1,148 @@
+[
+{
+	"uri": "//localhost:1313/vi/1-partyrock/1.3-summaryapp/",
+	"title": "Ứng dụng tóm tắt nội dung",
+	"tags": [],
+	"description": "",
+	"content": "Chạy thử ứng dụng tại đây: https://partyrock.aws/u/js2222/aw3_JHzyG/Content-Summarizer\nGiới thiệu Chúng ta sẽ tự tạo một ứng dụng tóm tắt nội dung đơn giản. Ngoài tính năng tạo app bằng câu lệnh miêu tả, PartyRock cũng cho phép người dùng tạo ứng dụng bằng app editor trên website.\nCác bước sau đây hướng dẫn sử dụng tiện ích User input và Text generation để tự động tạo ra tóm tắt chi tiết và tóm tắt một dòng từ các nội dung dài.\nTạo ứng dụng trống Go to https://partyrock.aws và đăng nhập. Chọn nút Build your own app, chọn Create empty app. Xem lại ứng dụng vừa tạo và tên ứng dụng ngẫu nhiên. Đổi tên ứng dụng thành Content Summarizer Thêm tiện tính User input và Text generation Chọn nút + Add widget, chọn mục Static Text Sửa các mục của Static Text. Đặt tên tiện ích Welcome\nĐổi Content:\n# Welcome to the Content Summarizer application!\rInstructions:\r1. Paste your content\r2. Get your summaries!\r## WARNING: Never share sensitive information when building or using a PartyRock app. This includes personal information and internal company information. Adjust the height of the widget by dragging the resize handle in its lower right corner (make sure all content is visible on screen by default)\nBấm Save\nTiện ích Static Text dùng ngôn ngữ Markdown để hiển thị nội dung.\nSelect the + Add widget button, then select User Input Set the User Input widget’s properties.\nSet Widget title to Paste your content here Set Placeholder to Content to summarize (NO SENSITIVE CONTENT) Select the Save button Add AI-powered widgets Select the + Add widget button, then select Text Generation\nSet the Text Generation widget’s properties.\nSet Widget title to Detailed summary Set Model to Comma`nd In the Prompt field, enter Write a detailed summary based on this content: , then enter the @ symbol to select the Paste your content here box as a source of content. Select the Save button Adjust the width of the Detailed summary panel by dragging the resize handle in its lower right corner. Add a new Text Generation widget.\nSet the Text Generation widget’s properties.\nSet Widget title to One-line summary Set Model to Claude 3 Sonnet In the Prompt field, enter Write a one-line summary based on this content: , then enter the @ symbol to select the Paste your content here box as a source of content. Expand the Advanced settings section and set the Temperature field to 0.5. This will let the model generate a random response each time it is run. Select the Save button Test the app Copy the following text and paste it into the Paste your content here box.\nPartyRock, an Amazon Bedrock playground, is a shareable generative AI app building playground. Experiment with prompt engineering in a hands-on and fun way. In a short time, you can build, share, and remix apps, to get inspired while playing with generative AI. For example, you can:\rBuild an app to generate dad jokes on the topic of your choice.\rCreate the perfect playlist based on your musical tastes.\rRecommend what to serve based on ingredients in your pantry.\rCreate and play a virtual trivia game online with friends from around the world.\rCreate an AI storyteller to guide your next fantasy -playing campaign.\rBy building and playing with PartyRock apps, you learn about the fundamental techniques and capabilities needed to get started with generative AI, including understanding how a foundation model responds to a given prompt, experimenting with different text-based prompts, and chaining prompts together. Anyone can access PartyRock through its intuitive web-based UI. For anyone interested in learning the fundamental skills needed to harness the power of generative AI, PartyRock uses Amazon Bedrock to create an accessible environment for experimentation with powerful foundational models (FMs). The tool builds confidence by providing new PartyRock users with free trial use for a limited time, and the PartyRock Guide helps learners extend their knowledge. Builders who are ready to move into production can proceed to the Bedrock console using the basic prompts and skills developed in PartyRock.\rAny builder can experiment with PartyRock by creating a profile using a social login from amazon.com, Apple, or Google. PartyRock is separate from the AWS console and does not require an AWS account to get started.\rPartyRock is for EVERYONE. It has been designed in a way that is friendly and accessible to builders of all skill levels, particularly those who have limited experience with generative AI. Even if you have no coding experience, you can use text-based prompts to experiment with foundation models and create your own generative AI-powered apps. Developers can explore model capabilities and refine prompt engineering techniques in PartyRock without managing API calls. Never include sensitive information in PartyRock!\n"
+},
+{
+	"uri": "//localhost:1313/vi/",
+	"title": "Tạo Gen AI bằng Amazon Bedrock và LangChain",
+	"tags": [],
+	"description": "",
+	"content": "Tạo Gen AI bằng Amazon Bedrock và LangChain Tổng quan Workshop này giới thiệu các khái niệm của gen AI thông qua các bài lab thực hành.\nNội dung Lựa chọn 1: Thực hành với ParyRock (không yêu cầu tài khoản AWS) Làm quen với PartyRock Tạo ứng dụng Ứng dụng tóm tắt nội dung Ứng dụng chatbot Ứng dụng chatbot với nội dung tài liệu Khám phá và tuỳ chỉnh ứng dụng có sẵn Hướng dẫn prompt engineering Lựa chọn 2: Thực hành với Amazon Bedrock \u0026amp; LangChain (yêu cầu tài khoản AWS) Các bước chuẩn bị Thực hành với các khái niệm nền tảng Thực hành AI với các mẫu cơ bản Thực hành AI với các mẫu văn bản Thực hành AI với hình ảnh và tập tin đa phương tiện Thực hành bảo mật và phương thức an toàn với AI Thực hành prompt engineering Thực hành bổ sung Dọn dẹp tài nguyên "
+},
+{
+	"uri": "//localhost:1313/vi/1-partyrock/1.2-createapp/",
+	"title": "Tạo ứng dụng",
+	"tags": [],
+	"description": "",
+	"content": "Chạy thử ứng dụng tại đây: https://partyrock.aws/u/js2222/9ktuP8ntP/PaintBrush\nGiới thiệu Chúng ta sẽ tạo một ứng dụng gen AI bằng cách miêu tả các đặc điểm mong muốn. PartyRock hỗ trợ tính năng app builder bằng cách tự động xây dựng ứng dụng dựa trên ý tưởng của người dùng. Sau khi khởi tạo, người dùng có thể chạy mặc định, hoặc tuỳ chỉnh thông qua app editor, hoặc xoá ứng dụng.\nCác bước sau đây hỗ trợ tạo ứng dụng tạo hình ảnh cho phép người dùng chỉ định chủ thể bức tranh và phong cách vẽ. Bạn có thể đưa ra bất kỳ ý tưởng tuỳ thích.\nTạo ứng dụng bằng App Builder Truy cập https://partyrock.aws và đăng nhập. Chọn nút Build your own app. Miêu tả ứng dụng theo ý thích của bạn. Sao chép câu lệnh sau đây và dán phần miêu tả: A painting generator that lets you choose a subject and style for the painting Chọn Generate. Xem lại ứng dụng vừa tạo. Ứng dụng tạo ra có thể có một số khác biệt!\nDùng thử ứng dụng! Trong ví dụ này, chúng ta chọn Painting Subject là The Grand Canyon và Painting Style là Dadaist. Các ứng dụng có thể khác biệt. Sau khi ứng dụng tạo ra hình ảnh, bạn có thể yêu cầu hình ảnh khác bằng cách chọn Retry ở góc phải bên trên hộp tạo ảnh.\nTạo snapshots (Không bắt buộc) (Không bắt buộc) Chọn icon camera \u0026ndash; nút Snapshot để lưu lại snapshot yêu cầu của bạn và output của AI.\nSnapshot được lưu trong My snapshots. Bạn có thể sao chép đường dẫn chia sẽ của các snapshots. Đừng bao giờ chia sẽ các thông tin cá nhân nhạy cảm trong snapshot hoặc PartyRock.\n(Không bắt buộc) Chọn nút Snapshots ở đầu trang\nBạn có thể xem lại hoặc xoá các snapshots ở đây. Chế độ riêng tư (Không bắt buộc) (Không bắt buộc) Bạn có thể xem lại các ứng dụng đã tạo trong mục Apps của mục lục. (Không bắt buộc) Để chỉnh chế độ riêng tư, vào editor của ứng dụng mong muốn và chọn public, sau đó chọn Make private. "
+},
+{
+	"uri": "//localhost:1313/vi/1-partyrock/",
+	"title": "Thực hành với PartyRock",
+	"tags": [],
+	"description": "",
+	"content": "Tổng quan PartyRock là một ứng dụng chạy bởi Amazon Bedrock cho phép người dùng tạo và chạy các ứng dụng gen AI, đặc biệt phù hợp cho mục đích học tập. PartyRock không yêu cầu tài khoản AWS, và hỗ trợ đăng nhập bằng các tài khoản mạng xã hội (Amazon.com, Apple, Google).\nWorkshop này dùng tính năng của PartyRock để tạo ra các ứng dụng gen AI khác nhau, và không đòi hỏi người thực hành có kinh nghiệm sử dụng gen AI, viết code hoặc phát triên ứng dụng.\nContent Làm quen với PartyRock Tạo ứng dụng Ứng dụng tóm tắt nội dung Ứng dụng chatbot Ứng dụng chat bằng tập tin Khám phá và tuỳ chỉnh ứng dụng có sẵn Hướng dẫn prompt engineering "
+},
+{
+	"uri": "//localhost:1313/vi/1-partyrock/1.1-register/",
+	"title": "Làm quen với PartyRock",
+	"tags": [],
+	"description": "",
+	"content": "Tạo tài khoản và Đăng nhập Truy cập https://partyrock.aws Chọn Sign in và đăng nhập bằng tài khoản Google, Apple hoặc Amazon (Amazon.com) Màn hình sau khi đăng nhập: Truy cập icon cánh cửa Backstage trong phần mục lục: https://partyrock.aws/backstage Backstage cho phép người dùng kiểm tra PartyRock credits đã sử dụng, thay đổi tuỳ chọn chia sẻ dữ liệu, và truy cập tài liệu hướng dẫn của PartyRock "
+},
+{
+	"uri": "//localhost:1313/vi/2-langchain/",
+	"title": "2 Langchain",
+	"tags": [],
+	"description": "",
+	"content": "Chapter X Some Chapter title Lorem Ipsum.\n"
+},
+{
+	"uri": "//localhost:1313/vi/1-partyrock/1.8-next/",
+	"title": "1.8 Next",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "//localhost:1313/vi/1-partyrock/1.4-chatbot/",
+	"title": "1.4 Chatbot",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "//localhost:1313/vi/2-langchain/2.8-bonus/",
+	"title": "2.8 Bonus",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "//localhost:1313/vi/2-langchain/2.7-prompteng/",
+	"title": "2.7 Prompteng",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "//localhost:1313/vi/2-langchain/2.6-security/",
+	"title": "2.6 Security",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "//localhost:1313/vi/2-langchain/2.5-image/",
+	"title": "2.5 Image",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "//localhost:1313/vi/2-langchain/2.4-text/",
+	"title": "2.4 Text",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "//localhost:1313/vi/2-langchain/2.3-basic/",
+	"title": "2.3 Basic",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "//localhost:1313/vi/2-langchain/2.2-foundational/",
+	"title": "2.2 Foundational",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "//localhost:1313/vi/2-langchain/2.1-prep/",
+	"title": "2.1 Prep",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "//localhost:1313/vi/1-partyrock/1.7-prompteng/",
+	"title": "1.6 Prompteng",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "//localhost:1313/vi/1-partyrock/1.6-remixapp/",
+	"title": "1.5 Remixapp",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "//localhost:1313/vi/1-partyrock/1.5-documentapp/",
+	"title": "1.4 Documentapp",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "//localhost:1313/vi/categories/",
+	"title": "Categories",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "//localhost:1313/vi/tags/",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+}]

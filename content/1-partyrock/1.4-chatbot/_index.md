@@ -66,7 +66,7 @@ You can try this app here: https://partyrock.aws/u/js2222/G9KTPc8Ue/Geek-Chatbot
     - Set **Widget title** to `Summary`
     - Set **Model** to `Claude 3 Haiku`
     - Set **Prompt** to `Write a one-line summary of the most recent message in the conversation:`
-    - Then enter the @ symbol to select the Talk to your Geek chatbot! box as a source of content.
+    - Then enter the @ symbol to select the `Talk to your Geek chatbot!` box as a source of content.
     - Select the **Save** button
 
 ![pr](/images/1-PartyRock/028-PartyRock.png)

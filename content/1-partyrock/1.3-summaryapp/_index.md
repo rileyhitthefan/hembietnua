@@ -50,7 +50,7 @@ In the steps below, we will use User Input and Text Generation widgets to automa
         ## WARNING: Never share sensitive information when building or using a PartyRock app. This includes personal information and internal company information.
         ```
    - Adjust the height of the widget by dragging the resize handle in its lower right corner (make sure all content is visible on screen by default)
-   - Select the Save button
+   - Select the **Save** button
 
 ![pr](/images/1-PartyRock/016-PartyRock.png)
 
@@ -75,23 +75,23 @@ The number signs in the text above are used to represent headings. The Static Te
 
 10. Set the Text Generation widget’s properties.
     - Set **Widget title** to `Detailed summary`
-    - Set **Model** to Comma`nd
-    - In the **Prompt** field, enter` Write a detailed summary based on this content:` , then enter the @ symbol to select the `Paste your content here` box as a source of content.
+    - Set **Model** to `Command`
+    - In the **Prompt** field, enter ` Write a detailed summary based on this content:`, then enter the @ symbol to select the `Paste your content here` box as a source of content.
     - Select the **Save** button
 
 ![pr](/images/1-PartyRock/019-PartyRock.png)
 
 11. Adjust the width of the **Detailed summary** panel by dragging the resize handle in its lower right corner.
 
-![pr](/images/1-PartyRock/020-PartyRock.png)
-
 12. Add a new **Text Generation** widget.
+
+![pr](/images/1-PartyRock/020-PartyRock.png)
 
 13. Set the Text Generation widget’s properties.
 
     - Set **Widget title** to `One-line summary`
     - Set **Model** to `Claude 3 Sonnet`
-    - In the **Prompt** field, enter `Write a one-line summary based on this content:` , then enter the @ symbol to select the `Paste your content here` box as a source of content.
+    - In the **Prompt** field, enter `Write a one-line summary based on this content:`, then enter the @ symbol to select the `Paste your content here` box as a source of content.
     - Expand the **Advanced settings** section and set the **Temperature** field to *0.5*. This will let the model generate a random response each time it is run.
     - Select the **Save** button
 
