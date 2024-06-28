@@ -23,12 +23,12 @@ pre : " <b>1. </b> "
  8. [Markdown basics]
 
 ##### **[Option 2: Amazon Bedrock & LangChain labs (for technical audiences)](2-langchain)**
- 1. Preparation
- 2. Foundational concepts labs
- 3. Basic patterns labs
- 4. Text patterns labs
- 5. Multimodal & image labs
- 6. Security & Safeguards labs
- 7. Prompt engineering labs
- 8. Bonus labs
- 9. Clean-up
+ 1. [Preparation](2-langchain/2.1-prep/)
+ 2. [Foundational concepts labs](2-langchain/2.2-foundational/)
+ 3. [Basic patterns labs](2-langchain/2.3-basic/)
+ 4. [Text patterns labs](2-langchain/2.4-text/)
+ 5. [Multimodal & image labs](2-langchain/2.5-image/)
+ 6. [Security & Safeguards labs](2-langchain/2.6-security/)
+ 7. [Prompt engineering labs](2-langchain/2.7-prompteng/)
+ 8. [Bonus labs](2-langchain/2.8-bonus/)
+ 9. [Clean-up]()

@@ -19,12 +19,12 @@ chapter : false
  7. [Hướng dẫn prompt engineering](1-partyrock/1.7-prompteng)
 
 ##### **[Lựa chọn 2: Thực hành với Amazon Bedrock & LangChain (yêu cầu tài khoản AWS)](2-langchain/)**
- 1. Các bước chuẩn bị
- 2. Thực hành với các khái niệm nền tảng
- 3. Thực hành AI với các mẫu  cơ bản
- 4. Thực hành AI với các mẫu văn bản
- 5. Thực hành AI với hình ảnh và tập tin đa phương tiện
- 6. Thực hành bảo mật và phương thức an toàn với AI
- 7. Thực hành prompt engineering
- 8. Thực hành bổ sung
- 9. Dọn dẹp tài nguyên
+ 1. [Các bước chuẩn bị](2-langchain/2.1-prep/)
+ 2. [Thực hành với các khái niệm nền tảng](2-langchain/2.2-foundational/)
+ 3. [Thực hành AI với các mẫu  cơ bản](2-langchain/2.3-basic/)
+ 4. [Thực hành AI với các mẫu văn bản](2-langchain/2.4-text/)
+ 5. [Thực hành AI với hình ảnh và tập tin đa phương tiện](2-langchain/2.5-image/)
+ 6. [Thực hành bảo mật và phương thức an toàn với AI](2-langchain/2.6-security/)
+ 7. [Thực hành prompt engineering](2-langchain/2.7-prompteng/)
+ 8. [Thực hành bổ sung](2-langchain/2.8-bonus/)
+ 9. [Dọn dẹp tài nguyên]()
