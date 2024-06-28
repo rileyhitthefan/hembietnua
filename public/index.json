@@ -1,0 +1,148 @@
+[
+{
+	"uri": "//localhost:1313/1-partyrock/1.8-next/",
+	"title": "Next steps",
+	"tags": [],
+	"description": "",
+	"content": "Now that you have learned the basics, try creating your own apps with PartyRock!\nLearn more about PartyRock:\nPartyRock Guide Build AI apps with PartyRock and Amazon Bedrock Below are prompt engineering guides provided by some of Amazon Bedrock\u0026rsquo;s model providers:\nBedrock Prompt Engineering Guidelines AI21 Prompt Engineering Anthropic Prompt Engineering Anthropic Prompt Library Cohere Prompt Engineering Mistral Prompting Capabilities "
+},
+{
+	"uri": "//localhost:1313/1-partyrock/1.4-chatbot/",
+	"title": "Chatbot app",
+	"tags": [],
+	"description": "",
+	"content": "Introduction In this lab, we will build a chatbot app from scratch using PartyRock. We will connect User Input, Chatbot, Text Generation, and Image Generation widgets together for maximum geeky effect.\nWe will use prompt chaining to wire the various widgets together. Prompt chaining is the practice of using the output of an AI-powered widget as input to another AI-powered widget. In this case, we will generate an image based on whatever the geek chatbot is talking about.\nYou can try this app here: https://partyrock.aws/u/js2222/G9KTPc8Ue/Geek-Chatbot\nBuild from scratch Go to https://partyrock.aws and sign in if needed. Select the Build your own app button, then select Create empty app. Review your empty app, including its placeholder title Set the page title to Geek Chatbot\nSelect the + Add widget button, then select User Input\nEdit the User Input widget’s properties Set Widget title to Geeky Topic Set Placeholder to Provide a geeky topic that your chatbot is obsessed with! Select the Save button Select the + Add widget button, then select Chatbot\nEdit the Chatbot widget’s properties\nSet Widget title to Talk to your Geek Chatbot! Set Placeholder to Geek out here! Set Model to Claude 3 Sonnet Set Initial message to Let’s geek out! Set Prompt to Pretend you are obsessed with TOPIC. You only want to talk about TOPIC. The user should only want to talk about TOPIC. - The user will now have a conversation with you. In the Prompt box, replace all occurrences of the word TOPIC using the @ symbol to select the Geeky Topic field Select the Save button Adjust the width of the Geeky Topic and Talk to your Geek Chatbot panels by dragging the resize handle in their lower right corners.\nHover over the area to the right of the Geeky Topic widget to see the Create Widget target area. You can click in that area to place a widget there.\nAlternatively, you could use the + Add widget button and move a widget into that area later. Add a Text Generation widget.\nEdit the Text Generation widget’s properties Set Widget title to Summary Set Model to Claude 3 Haiku Set Prompt to Write a one-line summary of the most recent message in the conversation: Then enter the @ symbol to select the Talk to your Geek chatbot! box as a source of content. Select the Save button Add an Image Generation widget.\nEdit the Image Generation widget’s properties\nSet Widget title to Image Set Model to Stable Diffusion XL Set Image description to An image of Then enter the @ symbol to select the Summary box as a source of content. Select the Save button Enter your geeky topic! Some possible topics: Aerospace engineering, Plumbing, Atlantic (Optional) Disappoint your chatbot "
+},
+{
+	"uri": "//localhost:1313/1-partyrock/1.7-prompteng/",
+	"title": "Prompt engineering guide",
+	"tags": [],
+	"description": "",
+	"content": "For people who want to learn how to work with generative AI without having to use code and command line tools, a PartyRock-based prompt engineering guide is available below:\nPrompt Engineering Introduction Content Creation Providing Context to Reduce Hallucinations Targeting Your Questions Repurposing Content Summarizing Long Content Language Translation Analyzing Customer Communication Information Extraction Prompting to Create and Understand Code Doing More with Generative AI "
+},
+{
+	"uri": "//localhost:1313/1-partyrock/1.6-remixapp/",
+	"title": "Discovering &amp; Remixing apps",
+	"tags": [],
+	"description": "",
+	"content": "Introduction Remixing allows us to take an existing app, copy it, and then customize it. Any app on PartyRock can be remixed.\nDiscovery \u0026amp; remix an app Go to the PartyRock Discover page: https://partyrock.aws/discover Under Trending, select an app. In this case, we selected the ChatRPG app, but any app will do. Select the Remix button. This will create a copy of the app that you can then edit. You can now edit this remixed app. Navigate to the PartyRock Apps page: https://partyrock.aws/apps From this page, you can view, edit, and delete your apps "
+},
+{
+	"uri": "//localhost:1313/1-partyrock/1.5-documentapp/",
+	"title": "Document chat app",
+	"tags": [],
+	"description": "",
+	"content": "Introduction In this lab, we will build a document chatbot app from scratch using PartyRock. We will connect Document and Chatbot widgets together to allow you to have a conversation about an uploaded document.\nNever post sensitive information (either personal information or sensitive business information) to PartyRock!\nYou can provide your own document in one of the following formats:\nPDF Text (.txt) Word (.docx) Markdown (.md) HTML CSV There is a limit of 120,000 characters in the uploaded file.\nUse a smaller uploaded file to minimize your PartyRock credit consumption.\nIf you want a simple, small PDF, you can download the PDF version of Amazon\u0026#39;s leadership principles here:\ramazon-leadership-principles-small.pdf\r(48 ko)\rBuild from scratch Go to https://partyrock.aws and sign in if needed. Select the Build your own app button, then select Create empty app. Review your empty app, including its placeholder title Set the page title to Document Chat\nSelect the + Add widget button, then select Document\nEdit the Document widget’s properties\nSet Widget title to Upload a Document Select the Save button Select the + Add widget button, then select Chatbot\nEdit the Chatbot widget’s properties\nSet Widget title to Chat About the Document Set Placeholder to Chat here! Set Model to Claude 3 Sonnet Set Initial message to Ready to chat! Set Prompt to: Support the conversation using the information within the document tags. \u0026lt;document\u0026gt;[Upload a Document]\u0026lt;/document\u0026gt; The user will now have a conversation with you. Select the Save button Upload a document and chat! You can download the PDF version of Amazon\u0026#39;s leadership principles here: amazon-leadership-principles-small.pdf\r(48 ko)\rNever post sensitive information (either personal information or sensitive business information) to PartyRock!\n"
+},
+{
+	"uri": "//localhost:1313/1-partyrock/1.3-summaryapp/",
+	"title": "Content summarizer app",
+	"tags": [],
+	"description": "",
+	"content": "You can try this app here: https://partyrock.aws/u/js2222/aw3_JHzyG/Content-Summarizer\nIntroduction In this lab, we will build a basic content summarizer app from scratch. In addition to the prompt-based app builder feature, PartyRock allows you to create an app through a web-based app editor.\nIn the steps below, we will use User Input and Text Generation widgets to automatically generate detailed \u0026amp; one-line summaries from longer content.\nBuild from scratch Go to https://partyrock.aws and sign in if needed. Select the Build your own app button, then select Create empty app. Review your empty app, including its placeholder title Replace the placeholder title with Content Summarizer Add User Input and Static Text widgets Select the + Add widget button, then select Static Text Edit the Static Text widget’s properties. Set Widget title to Welcome\nSet Content to:\n# Welcome to the Content Summarizer application!\rInstructions:\r1. Paste your content\r2. Get your summaries!\r## WARNING: Never share sensitive information when building or using a PartyRock app. This includes personal information and internal company information. Adjust the height of the widget by dragging the resize handle in its lower right corner (make sure all content is visible on screen by default)\nSelect the Save button\nThe number signs in the text above are used to represent headings. The Static Text widget uses Markdown to indicate text styles. Please see the included Markdown basics guide to learn more.\nSelect the + Add widget button, then select User Input Set the User Input widget’s properties.\nSet Widget title to Paste your content here Set Placeholder to Content to summarize (NO SENSITIVE CONTENT) Select the Save button Add AI-powered widgets Select the + Add widget button, then select Text Generation\nSet the Text Generation widget’s properties.\nSet Widget title to Detailed summary Set Model to Comma`nd In the Prompt field, enter Write a detailed summary based on this content: , then enter the @ symbol to select the Paste your content here box as a source of content. Select the Save button Adjust the width of the Detailed summary panel by dragging the resize handle in its lower right corner. Add a new Text Generation widget.\nSet the Text Generation widget’s properties.\nSet Widget title to One-line summary Set Model to Claude 3 Sonnet In the Prompt field, enter Write a one-line summary based on this content: , then enter the @ symbol to select the Paste your content here box as a source of content. Expand the Advanced settings section and set the Temperature field to 0.5. This will let the model generate a random response each time it is run. Select the Save button Test the app Copy the following text and paste it into the Paste your content here box.\nPartyRock, an Amazon Bedrock playground, is a shareable generative AI app building playground. Experiment with prompt engineering in a hands-on and fun way. In a short time, you can build, share, and remix apps, to get inspired while playing with generative AI. For example, you can:\rBuild an app to generate dad jokes on the topic of your choice.\rCreate the perfect playlist based on your musical tastes.\rRecommend what to serve based on ingredients in your pantry.\rCreate and play a virtual trivia game online with friends from around the world.\rCreate an AI storyteller to guide your next fantasy -playing campaign.\rBy building and playing with PartyRock apps, you learn about the fundamental techniques and capabilities needed to get started with generative AI, including understanding how a foundation model responds to a given prompt, experimenting with different text-based prompts, and chaining prompts together. Anyone can access PartyRock through its intuitive web-based UI. For anyone interested in learning the fundamental skills needed to harness the power of generative AI, PartyRock uses Amazon Bedrock to create an accessible environment for experimentation with powerful foundational models (FMs). The tool builds confidence by providing new PartyRock users with free trial use for a limited time, and the PartyRock Guide helps learners extend their knowledge. Builders who are ready to move into production can proceed to the Bedrock console using the basic prompts and skills developed in PartyRock.\rAny builder can experiment with PartyRock by creating a profile using a social login from amazon.com, Apple, or Google. PartyRock is separate from the AWS console and does not require an AWS account to get started.\rPartyRock is for EVERYONE. It has been designed in a way that is friendly and accessible to builders of all skill levels, particularly those who have limited experience with generative AI. Even if you have no coding experience, you can use text-based prompts to experiment with foundation models and create your own generative AI-powered apps. Developers can explore model capabilities and refine prompt engineering techniques in PartyRock without managing API calls. Never include sensitive information in PartyRock!\n"
+},
+{
+	"uri": "//localhost:1313/",
+	"title": "Building with Amazon Bedrock and LangChain",
+	"tags": [],
+	"description": "",
+	"content": "Building with Amazon Bedrock and LangChain Overall This workshop is designed to help introduce generative AI concepts through dozens of hands-on exercises.\nContent Option 1: PartyRock prompt engineering guide (for non-technical and technical audiences) Getting started with PartyRock Generate an app Content summarizer app Chatbot app Document chat app Discovering \u0026amp; Remixing app Prompt engineering guide [Markdown basics] Option 2: Amazon Bedrock \u0026amp; LangChain labs (for technical audiences) Preparation Foundational concepts labs Basic patterns labs Text patterns labs Multimodal \u0026amp; image labs Security \u0026amp; Safeguards labs Prompt engineering labs Bonus labs Clean-up "
+},
+{
+	"uri": "//localhost:1313/1-partyrock/1.2-createapp/",
+	"title": "Generate an app",
+	"tags": [],
+	"description": "",
+	"content": "You can try this app here: https://partyrock.aws/u/js2222/9ktuP8ntP/PaintBrush\nIntroduction In this lab, we will build a generative AI app just by describing what we want PartyRock to create. PartyRock offers an app builder feature that takes your idea and automatically creates an app from it. You can then either run it as-is, customize it in the app editor, or delete it.\nIn the steps below, we will build an image generation app that allows you to specify a painting subject and style. Feel free to try your own app idea if you prefer!\nGenerate app with App Builder Go to https://partyrock.aws and sign in if needed. Select the Build your own app button. Specify what you want to build. Copy the following prompt and paste it into the app description box: A painting generator that lets you choose a subject and style for the painting Click the Generate app button Review the generated app Your generated app may appear different than this. That\u0026rsquo;s OK!\nTry using your app! In the example below, we set Painting Subject to The Grand Canyon and Painting Style to Dadaist. Your app may work differently, and that\u0026rsquo;s OK! You can have PartyRock generate a new image by using the Retry option in the upper-right corner of the Image Generation panel.\nWorking with snapshots (optional) (Optional) Select the camera icon / Snapshot button to save a snapshot of your input content and AI-generated output.\nThe snapshot will be saved to the My snapshots panel. You can copy the snapshot URL to share with others. Never include sensitive information in a snapshot. In fact, never include sensitive information in PartyRock!\n(Optional) Select the Snapshots link at the top of the page.\nFrom here you can view your snapshots, and delete them. Make private (optional) (Optional) If you navigated away, you can find your app through the Apps link in the hamburger menu. (Optional) To make your app private again, on the app page, select public and then Make private. "
+},
+{
+	"uri": "//localhost:1313/1-partyrock/",
+	"title": "PartyRock Labs",
+	"tags": [],
+	"description": "",
+	"content": "PartyRock labs (no AWS access required) Overall PartyRock, an Amazon Bedrock playground, is a space where you can build and use AI-generated apps in a playground powered by Amazon Bedrock. It’s a fast and fun way to learn about generative AI. It does not require an AWS account to get started. Anyone can experiment with PartyRock by creating a profile using a social login from Amazon.com, Apple, or Google.\nThese labs assume no previous experience with generative AI, writing code, or app development. You will use PartyRock\u0026rsquo;s capabilities to create several different generative AI applications.\nContent Getting started with PartyRock Generate an app Content summarizer app Chatbot app Document chat app Discovering \u0026amp; Remixing app Prompt engineering guide "
+},
+{
+	"uri": "//localhost:1313/1-partyrock/1.1-register/",
+	"title": "Getting started with PartyRock",
+	"tags": [],
+	"description": "",
+	"content": "Register and Login Go to https://partyrock.aws Select the Sign in link and choose either Google, Apple, or Amazon to log in. (For internal Amazonians: “Amazon” in this case refers to the public Amazon.com website) Review the signed-in version of the PartyRock website. Click Backstage icon in the hamburger menu to access the Backstage section: https://partyrock.aws/backstage Here you can review your used credits, change your data sharing preference, and access the PartyRock reference materials. "
+},
+{
+	"uri": "//localhost:1313/2-langchain/",
+	"title": "Bedrock &amp; LangChain labs",
+	"tags": [],
+	"description": "",
+	"content": "Chapter X Some Chapter title Lorem Ipsum.\n"
+},
+{
+	"uri": "//localhost:1313/2-langchain/2.8-bonus/",
+	"title": "2.8 Bonus",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "//localhost:1313/2-langchain/2.7-prompteng/",
+	"title": "2.7 Prompteng",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "//localhost:1313/2-langchain/2.6-security/",
+	"title": "2.6 Security",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "//localhost:1313/2-langchain/2.5-image/",
+	"title": "2.5 Image",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "//localhost:1313/2-langchain/2.4-text/",
+	"title": "2.4 Text",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "//localhost:1313/2-langchain/2.3-basic/",
+	"title": "2.3 Basic",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "//localhost:1313/2-langchain/2.2-foundational/",
+	"title": "2.2 Foundational",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "//localhost:1313/2-langchain/2.1-prep/",
+	"title": "2.1 Prep",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "//localhost:1313/categories/",
+	"title": "Categories",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "//localhost:1313/tags/",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+}]
