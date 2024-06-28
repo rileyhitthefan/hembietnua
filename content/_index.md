@@ -20,7 +20,6 @@ pre : " <b>1. </b> "
  5. [Document chat app](1-partyrock/1.5-documentapp/)
  6. [Discovering & Remixing app](1-partyrock/1.6-remixapp/)
  7. [Prompt engineering guide](1-partyrock/1.7-prompteng/)
- 8. [Markdown basics]
 
 ##### **[Option 2: Amazon Bedrock & LangChain labs (for technical audiences)](2-langchain)**
  1. [Preparation](2-langchain/2.1-prep/)
