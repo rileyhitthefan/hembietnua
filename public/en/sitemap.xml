@@ -2,6 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>//localhost:1313/2-langchain/2.2-foundational/labf-1/</loc>
+    <lastmod>2024-06-28T15:17:27+07:00</lastmod>
+  </url><url>
     <loc>//localhost:1313/1-partyrock/1.8-next/</loc>
     <lastmod>2024-06-28T11:10:54+07:00</lastmod>
     <xhtml:link
@@ -27,6 +30,22 @@
                 hreflang="en"
                 href="//localhost:1313/1-partyrock/1.4-chatbot/"
                 />
+  </url><url>
+    <loc>//localhost:1313/2-langchain/2.1-prep/</loc>
+    <lastmod>2024-06-27T14:35:46+07:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/2-langchain/2.1-prep/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/2-langchain/2.1-prep/"
+                />
+  </url><url>
+    <loc>//localhost:1313/2-langchain/2.1-prep/bedrocksetup/</loc>
+    <lastmod>2024-06-27T14:35:46+07:00</lastmod>
   </url><url>
     <loc>//localhost:1313/1-partyrock/1.7-prompteng/</loc>
     <lastmod>2024-06-27T14:35:13+07:00</lastmod>
@@ -145,6 +164,55 @@
                 href="//localhost:1313/2-langchain/"
                 />
   </url><url>
+    <loc>//localhost:1313/2-langchain/2.2-foundational/labf-2/</loc>
+    <lastmod>2024-06-28T15:17:55+07:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/2-langchain/2.2-foundational/</loc>
+    <lastmod>2024-06-27T14:36:05+07:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/2-langchain/2.2-foundational/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/2-langchain/2.2-foundational/"
+                />
+  </url><url>
+    <loc>//localhost:1313/2-langchain/2.1-prep/cloud9setup/</loc>
+    <lastmod>2024-06-27T14:35:46+07:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/2-langchain/2.2-foundational/labf-3/</loc>
+    <lastmod>2024-06-28T15:17:58+07:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/2-langchain/2.1-prep/labsetup/</loc>
+    <lastmod>2024-06-27T14:35:46+07:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/2-langchain/2.2-foundational/labf-4/</loc>
+    <lastmod>2024-06-28T15:18:01+07:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/2-langchain/2.1-prep/minimumiamperms/</loc>
+    <lastmod>2024-06-27T14:35:46+07:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/2-langchain/2.2-foundational/labf-5/</loc>
+    <lastmod>2024-06-28T15:18:04+07:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/2-langchain/2.2-foundational/labf-6/</loc>
+    <lastmod>2024-06-28T15:18:06+07:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/2-langchain/2.2-foundational/labf-7/</loc>
+    <lastmod>2024-06-28T15:18:11+07:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/2-langchain/2.2-foundational/labf-8/</loc>
+    <lastmod>2024-06-28T15:20:59+07:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/2-langchain/2.2-foundational/labf-9/</loc>
+    <lastmod>2024-06-28T15:18:14+07:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/2-langchain/2.2-foundational/modelselection/</loc>
+    <lastmod>2024-06-28T15:18:30+07:00</lastmod>
+  </url><url>
     <loc>//localhost:1313/2-langchain/2.8-bonus/</loc>
     <lastmod>2024-06-27T14:37:26+07:00</lastmod>
     <xhtml:link
@@ -221,32 +289,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="//localhost:1313/2-langchain/2.3-basic/"
-                />
-  </url><url>
-    <loc>//localhost:1313/2-langchain/2.2-foundational/</loc>
-    <lastmod>2024-06-27T14:36:05+07:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="//localhost:1313/vi/2-langchain/2.2-foundational/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="//localhost:1313/2-langchain/2.2-foundational/"
-                />
-  </url><url>
-    <loc>//localhost:1313/2-langchain/2.1-prep/</loc>
-    <lastmod>2024-06-27T14:35:46+07:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="//localhost:1313/vi/2-langchain/2.1-prep/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="//localhost:1313/2-langchain/2.1-prep/"
                 />
   </url><url>
     <loc>//localhost:1313/categories/</loc>

@@ -1,12 +1,82 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>2.2 Foundational on Building with Amazon Bedrock and LangChain</title>
+    <title>🧱Foundational Labs on Building with Amazon Bedrock and LangChain</title>
     <link>//localhost:1313/2-langchain/2.2-foundational/</link>
-    <description>Recent content in 2.2 Foundational on Building with Amazon Bedrock and LangChain</description>
+    <description>Recent content in 🧱Foundational Labs on Building with Amazon Bedrock and LangChain</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate></lastBuildDate>
+    <lastBuildDate>Fri, 28 Jun 2024 15:20:59 +0700</lastBuildDate>
     <atom:link href="//localhost:1313/2-langchain/2.2-foundational/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Lab F-1: Bedrock Console</title>
+      <link>//localhost:1313/2-langchain/2.2-foundational/labf-1/</link>
+      <pubDate>Fri, 28 Jun 2024 15:17:27 +0700</pubDate>
+      <guid>//localhost:1313/2-langchain/2.2-foundational/labf-1/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Lab F-2: InvokeModel API</title>
+      <link>//localhost:1313/2-langchain/2.2-foundational/labf-2/</link>
+      <pubDate>Fri, 28 Jun 2024 15:17:55 +0700</pubDate>
+      <guid>//localhost:1313/2-langchain/2.2-foundational/labf-2/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Lab F-3: Converse API</title>
+      <link>//localhost:1313/2-langchain/2.2-foundational/labf-3/</link>
+      <pubDate>Fri, 28 Jun 2024 15:17:58 +0700</pubDate>
+      <guid>//localhost:1313/2-langchain/2.2-foundational/labf-3/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Lab F-4: Intro to Langchain</title>
+      <link>//localhost:1313/2-langchain/2.2-foundational/labf-4/</link>
+      <pubDate>Fri, 28 Jun 2024 15:18:01 +0700</pubDate>
+      <guid>//localhost:1313/2-langchain/2.2-foundational/labf-4/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Lab F-5: Inference Parameters</title>
+      <link>//localhost:1313/2-langchain/2.2-foundational/labf-5/</link>
+      <pubDate>Fri, 28 Jun 2024 15:18:04 +0700</pubDate>
+      <guid>//localhost:1313/2-langchain/2.2-foundational/labf-5/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Lab F-6: Controlling response variability</title>
+      <link>//localhost:1313/2-langchain/2.2-foundational/labf-6/</link>
+      <pubDate>Fri, 28 Jun 2024 15:18:06 +0700</pubDate>
+      <guid>//localhost:1313/2-langchain/2.2-foundational/labf-6/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Lab F-7: Streaming API</title>
+      <link>//localhost:1313/2-langchain/2.2-foundational/labf-7/</link>
+      <pubDate>Fri, 28 Jun 2024 15:18:11 +0700</pubDate>
+      <guid>//localhost:1313/2-langchain/2.2-foundational/labf-7/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Lab F-8: Embeddings</title>
+      <link>//localhost:1313/2-langchain/2.2-foundational/labf-8/</link>
+      <pubDate>Fri, 28 Jun 2024 15:20:59 +0700</pubDate>
+      <guid>//localhost:1313/2-langchain/2.2-foundational/labf-8/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Lab F-9: Intro to Streamlit</title>
+      <link>//localhost:1313/2-langchain/2.2-foundational/labf-9/</link>
+      <pubDate>Fri, 28 Jun 2024 15:18:14 +0700</pubDate>
+      <guid>//localhost:1313/2-langchain/2.2-foundational/labf-9/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Model Selection</title>
+      <link>//localhost:1313/2-langchain/2.2-foundational/modelselection/</link>
+      <pubDate>Fri, 28 Jun 2024 15:18:30 +0700</pubDate>
+      <guid>//localhost:1313/2-langchain/2.2-foundational/modelselection/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>
