@@ -1,0 +1,246 @@
+[
+{
+	"uri": "//localhost:1313/2-langchain/2.2-foundational/labf-1/",
+	"title": "Lab F-1: Bedrock Console",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "//localhost:1313/2-langchain/2.1-prep/",
+	"title": "🏡Prerequisites",
+	"tags": [],
+	"description": "",
+	"content": "In the AWS console, select the region from which you want to access Amazon Bedrock.\nAt the time of writing, this workshop will work best in either the us-west-2 (Oregon) or us-east-1 (N. Virginia) regions. "
+},
+{
+	"uri": "//localhost:1313/2-langchain/2.1-prep/bedrocksetup/",
+	"title": "Amazon Bedrock Setup",
+	"tags": [],
+	"description": "",
+	"content": "We will be using Amazon Bedrock to access foundation models in this workshop.\nBelow we will configure model access in Amazon Bedrock in order to build and run generative AI applications. Amazon Bedrock provides a variety of foundation models from several providers.\nAmazon Bedrock Setup instructions Find Amazon Bedrock by searching in the AWS console. Expand the side menu. From the side menu, select Model access. Select the Enable specific models button. Select the checkboxes listed below to activate the models. If running from your own account, there is no cost to activate the models - you only pay for what you use during the labs. Review the applicable EULAs as needed. AI21 \u0026gt; Jurassic-2 Ultra Amazon (select Amazon to automatically select all Amazon Titan models) Anthropic \u0026gt; Claude 3 Sonnet Cohere \u0026gt; Command Meta \u0026gt; Llama 2 Chat 70B Mistral AI \u0026gt; Mixtral 8x7B Instruct Select the Next button.\nOn the Review and submit page, select the Submit button. Monitor the model access status. It may take a few minutes for the models to move from In Progress to Access granted status. You can use the Refresh button to periodically check for updates.\nVerify that the model access status is Access granted for the previously selected models.\nCongratulations!\nYou have successfully configured Amazon Bedrock!\n"
+},
+{
+	"uri": "//localhost:1313/",
+	"title": "Building with Amazon Bedrock and LangChain",
+	"tags": [],
+	"description": "",
+	"content": "Building with Amazon Bedrock and LangChain Overall This workshop is designed to help introduce generative AI concepts through dozens of hands-on exercises.\nContent Option 1: PartyRock prompt engineering guide (for non-technical and technical audiences) Getting started with PartyRock Generate an app Content summarizer app Chatbot app Document chat app Discovering \u0026amp; Remixing app Prompt engineering guide Option 2: Amazon Bedrock \u0026amp; LangChain labs (for technical audiences) Preparation Foundational concepts labs Basic patterns labs Text patterns labs Multimodal \u0026amp; image labs Security \u0026amp; Safeguards labs Prompt engineering labs Bonus labs Clean-up "
+},
+{
+	"uri": "//localhost:1313/1-partyrock/",
+	"title": "PartyRock Labs",
+	"tags": [],
+	"description": "",
+	"content": "PartyRock labs (no AWS access required) Overall PartyRock, an Amazon Bedrock playground, is a space where you can build and use AI-generated apps in a playground powered by Amazon Bedrock. It’s a fast and fun way to learn about generative AI. It does not require an AWS account to get started. Anyone can experiment with PartyRock by creating a profile using a social login from Amazon.com, Apple, or Google.\nThese labs assume no previous experience with generative AI, writing code, or app development. You will use PartyRock\u0026rsquo;s capabilities to create several different generative AI applications.\nContent Getting started with PartyRock Generate an app Content summarizer app Chatbot app Document chat app Discovering \u0026amp; Remixing app Prompt engineering guide "
+},
+{
+	"uri": "//localhost:1313/1-partyrock/1.1-register/",
+	"title": "Getting started with PartyRock",
+	"tags": [],
+	"description": "",
+	"content": "Register and Login Go to https://partyrock.aws Select the Sign in link and choose either Google, Apple, or Amazon to log in. (For internal Amazonians: “Amazon” in this case refers to the public Amazon.com website) Review the signed-in version of the PartyRock website. Click Backstage icon in the hamburger menu to access the Backstage section: https://partyrock.aws/backstage Here you can review your used credits, change your data sharing preference, and access the PartyRock reference materials. "
+},
+{
+	"uri": "//localhost:1313/2-langchain/",
+	"title": "Bedrock &amp; LangChain labs",
+	"tags": [],
+	"description": "",
+	"content": "Overview Amazon Bedrock is a fully managed service for using foundation models. It allows you to access models from Amazon and third parties with a single set of APIs for both text generation and image generation.\nIn this workshop, we will use LangChain to build generative AI prototypes with Amazon Bedrock. We will proceed through a series of labs aimed at different skill levels from beginner to intermediate. We will learn how to use the capabilities of the libraries and models to build prototypes for a wide range of use cases.\nLangChain provides convenient functions for interacting with Amazon Bedrock\u0026rsquo;s models and related services like vector databases. LangChain offers Python and JavaScript libraries. For this workshop, we will use the Python version of LangChain.\nStreamlit allows us to quickly create web front ends for our Python code, without needing front-end development skills. Streamlit is great for creating proofs-of-concepts that can be presented to a wide audience of both technical and non-technical people.\nOnce you have completed the Prerequisites sections, you can complete the labs in any order.\nTable of Contents 🏡Prerequisites 🧱Foundational Labs 📙Basic patterns Labs 📚Text patterns Labs 🌃Multimodal and Image Labs 🔐Security and Safeguard Labs 💬Prompt Engineering Labs 🎁Bonus Labs "
+},
+{
+	"uri": "//localhost:1313/2-langchain/2.2-foundational/labf-2/",
+	"title": "Lab F-2: InvokeModel API",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "//localhost:1313/2-langchain/2.2-foundational/",
+	"title": "🧱Foundational Labs",
+	"tags": [],
+	"description": "",
+	"content": "\rPlease complete the Prerequisites section before starting these labs.\nThese labs will help familiarize you with the concepts, frameworks, and services used in later labs.\nEach lab is self-contained, and can be done in any order:\nLab F-1: Bedrock Console Lab F-2: InvokeModel API Lab F-3: Converse API Lab F-4: Intro to LangChain Lab F-5: Inference parameters Lab F-6: Controlling response variability Lab F-7: Streaming API Lab F-8: Embeddings Lab F-9: Intro to Streamlit Model selection "
+},
+{
+	"uri": "//localhost:1313/2-langchain/2.1-prep/cloud9setup/",
+	"title": "AWS Cloud9 Setup",
+	"tags": [],
+	"description": "",
+	"content": "We will be using AWS Cloud9 as our integrated development environment for this workshop. AWS Cloud9 is one option for building applications with Amazon Bedrock - you can also use your own development tools (VS Code, PyCharm, etc.), Amazon SageMaker Studio , or Jupyter Notebooks.\nBelow we will configure an AWS Cloud9 enviroment in order to build and run generative AI applications. An environment is a web-based integrated development environment for editing code and running terminal commands.\nAssumptions for the following instructions\n- AWS Cloud9 will be run from the same account and region where Bedrock foundation models have been enabled.\n- The acccount and region have a default VPC configured (this is the AWS default).\nIf you have any challenges below, you may need to access Bedrock from your desktop environment, or create an alternate configuration.\nCloud9 Setup instructions In the AWS console, select the region that has Amazon Bedrock foundation models enabled.\nIn the AWS console, search for Cloud9.\nSelect Cloud9 from the search results. Select Create environment Set the environment details. Set Name to bedrock-environment. Set the EC2 instance details.\nSet Instance type to t3.small Set Platform to Ubuntu Server 22.04 LTS Set Timeout to 4 hours Did you select Ubuntu as your platform?\nPlease double-check that you set Platform to Ubuntu Server 22.04 LTS. This ensures that you will have a Python version that can support LangChain and other critical libraries.\nSelect the Create button. Wait for the environment to be created.\nYou should get a \u0026ldquo;Successfully created bedrock-environment\u0026rdquo; message in the top banner when ready. In the Environments list, click the Open link. This will launch the AWS Cloud9 IDE in a new tab. Handling environment creation errors\n- If you get an error message about the selected instance type not being available in the availability zone, delete the environment. Try provisioning again with a different size instance type.\nConfirm that the AWS Cloud9 environment loaded properly. You can close the Welcome tab You can drag tabs around to the position you want them in. In this example, the bash terminal tab was dragged up to the top tab strip, and the bottom-aligned panel was closed:\nCongratulations!\nYou have successfully configured and launched AWS Cloud9!\n"
+},
+{
+	"uri": "//localhost:1313/1-partyrock/1.2-createapp/",
+	"title": "Generate an app",
+	"tags": [],
+	"description": "",
+	"content": "You can try this app here: https://partyrock.aws/u/js2222/9ktuP8ntP/PaintBrush\nIntroduction In this lab, we will build a generative AI app just by describing what we want PartyRock to create. PartyRock offers an app builder feature that takes your idea and automatically creates an app from it. You can then either run it as-is, customize it in the app editor, or delete it.\nIn the steps below, we will build an image generation app that allows you to specify a painting subject and style. Feel free to try your own app idea if you prefer!\nGenerate app with App Builder Go to https://partyrock.aws and sign in if needed. Select the Build your own app button. Specify what you want to build. Copy the following prompt and paste it into the app description box: A painting generator that lets you choose a subject and style for the painting Click the Generate app button Review the generated app Your generated app may appear different than this. That\u0026rsquo;s OK!\nTry using your app! In the example below, we set Painting Subject to The Grand Canyon and Painting Style to Dadaist. Your app may work differently, and that\u0026rsquo;s OK! You can have PartyRock generate a new image by using the Retry option in the upper-right corner of the Image Generation panel.\nWorking with snapshots (optional) (Optional) Select the camera icon / Snapshot button to save a snapshot of your input content and AI-generated output.\nThe snapshot will be saved to the My snapshots panel. You can copy the snapshot URL to share with others. Never include sensitive information in a snapshot. In fact, never include sensitive information in PartyRock!\n(Optional) Select the Snapshots link at the top of the page.\nFrom here you can view your snapshots, and delete them. Make private (optional) (Optional) If you navigated away, you can find your app through the Apps link in the hamburger menu. (Optional) To make your app private again, on the app page, select public and then Make private. "
+},
+{
+	"uri": "//localhost:1313/2-langchain/2.2-foundational/labf-3/",
+	"title": "Lab F-3: Converse API",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "//localhost:1313/2-langchain/2.3-basic/",
+	"title": "📙Basic patterns Labs",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "//localhost:1313/2-langchain/2.1-prep/labsetup/",
+	"title": "Lab setup",
+	"tags": [],
+	"description": "",
+	"content": "Download and configure the assets for the labs In the AWS Cloud9 IDE, select the bash terminal. Paste and run the following into the terminal to download and unzip the code. cd ~/environment/\rcurl \u0026#39;https://static.us-east-1.prod.workshops.aws/public/4aaab724-21a5-4155-80ee-db443f910e6c/assets/workshop.zip\u0026#39; --output workshop.zip\runzip workshop.zip Once completed, you should see the unzip results in the terminal:\nInstall the dependencies for the labs. pip3 install -r ~/environment/workshop/setup/requirements.txt -U If everything worked properly, you should see a success message (you can disregard the notice like below):\nVerify configuration by pasting and running the following into the AWS Cloud9 terminal: cd ~/environment/\rpython ~/environment/workshop/completed/api/bedrock_api.py If everything is working properly, you should see a response about Manchester, New Hampshire:\nYou\u0026rsquo;re ready to try some labs! Any of the following sections could be a good place to start, depending on your experience level and interests:\n🧱Foundational concepts Labs 📙Basic patterns Labs 📚Text patterns Labs 🌃Multimodal \u0026amp; Image Labs 🔐Security \u0026amp; Safeguard Labs 💬Prompt Engineering Labs 🎁Bonus Labs "
+},
+{
+	"uri": "//localhost:1313/1-partyrock/1.3-summaryapp/",
+	"title": "Content summarizer app",
+	"tags": [],
+	"description": "",
+	"content": "You can try this app here: https://partyrock.aws/u/js2222/aw3_JHzyG/Content-Summarizer\nIntroduction In this lab, we will build a basic content summarizer app from scratch. In addition to the prompt-based app builder feature, PartyRock allows you to create an app through a web-based app editor.\nIn the steps below, we will use User Input and Text Generation widgets to automatically generate detailed \u0026amp; one-line summaries from longer content.\nBuild from scratch Go to https://partyrock.aws and sign in if needed. Select the Build your own app button, then select Create empty app. Review your empty app, including its placeholder title Replace the placeholder title with Content Summarizer Add User Input and Static Text widgets Select the + Add widget button, then select Static Text Edit the Static Text widget’s properties. Set Widget title to Welcome\nSet Content to:\n# Welcome to the Content Summarizer application!\rInstructions:\r1. Paste your content\r2. Get your summaries!\r## WARNING: Never share sensitive information when building or using a PartyRock app. This includes personal information and internal company information. Adjust the height of the widget by dragging the resize handle in its lower right corner (make sure all content is visible on screen by default)\nSelect the Save button\nThe number signs in the text above are used to represent headings. The Static Text widget uses Markdown to indicate text styles. Please see the included Markdown basics guide to learn more.\nSelect the + Add widget button, then select User Input Set the User Input widget’s properties.\nSet Widget title to Paste your content here Set Placeholder to Content to summarize (NO SENSITIVE CONTENT) Select the Save button Add AI-powered widgets Select the + Add widget button, then select Text Generation\nSet the Text Generation widget’s properties.\nSet Widget title to Detailed summary Set Model to Command In the Prompt field, enter Write a detailed summary based on this content:, then enter the @ symbol to select the Paste your content here box as a source of content. Select the Save button Adjust the width of the Detailed summary panel by dragging the resize handle in its lower right corner.\nAdd a new Text Generation widget.\nSet the Text Generation widget’s properties.\nSet Widget title to One-line summary Set Model to Claude 3 Sonnet In the Prompt field, enter Write a one-line summary based on this content:, then enter the @ symbol to select the Paste your content here box as a source of content. Expand the Advanced settings section and set the Temperature field to 0.5. This will let the model generate a random response each time it is run. Select the Save button Test the app Copy the following text and paste it into the Paste your content here box.\nPartyRock, an Amazon Bedrock playground, is a shareable generative AI app building playground. Experiment with prompt engineering in a hands-on and fun way. In a short time, you can build, share, and remix apps, to get inspired while playing with generative AI. For example, you can:\rBuild an app to generate dad jokes on the topic of your choice.\rCreate the perfect playlist based on your musical tastes.\rRecommend what to serve based on ingredients in your pantry.\rCreate and play a virtual trivia game online with friends from around the world.\rCreate an AI storyteller to guide your next fantasy -playing campaign.\rBy building and playing with PartyRock apps, you learn about the fundamental techniques and capabilities needed to get started with generative AI, including understanding how a foundation model responds to a given prompt, experimenting with different text-based prompts, and chaining prompts together. Anyone can access PartyRock through its intuitive web-based UI. For anyone interested in learning the fundamental skills needed to harness the power of generative AI, PartyRock uses Amazon Bedrock to create an accessible environment for experimentation with powerful foundational models (FMs). The tool builds confidence by providing new PartyRock users with free trial use for a limited time, and the PartyRock Guide helps learners extend their knowledge. Builders who are ready to move into production can proceed to the Bedrock console using the basic prompts and skills developed in PartyRock.\rAny builder can experiment with PartyRock by creating a profile using a social login from amazon.com, Apple, or Google. PartyRock is separate from the AWS console and does not require an AWS account to get started.\rPartyRock is for EVERYONE. It has been designed in a way that is friendly and accessible to builders of all skill levels, particularly those who have limited experience with generative AI. Even if you have no coding experience, you can use text-based prompts to experiment with foundation models and create your own generative AI-powered apps. Developers can explore model capabilities and refine prompt engineering techniques in PartyRock without managing API calls. Never include sensitive information in PartyRock!\n"
+},
+{
+	"uri": "//localhost:1313/2-langchain/2.2-foundational/labf-4/",
+	"title": "Lab F-4: Intro to Langchain",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "//localhost:1313/1-partyrock/1.4-chatbot/",
+	"title": "Chatbot app",
+	"tags": [],
+	"description": "",
+	"content": "Introduction In this lab, we will build a chatbot app from scratch using PartyRock. We will connect User Input, Chatbot, Text Generation, and Image Generation widgets together for maximum geeky effect.\nWe will use prompt chaining to wire the various widgets together. Prompt chaining is the practice of using the output of an AI-powered widget as input to another AI-powered widget. In this case, we will generate an image based on whatever the geek chatbot is talking about.\nYou can try this app here: https://partyrock.aws/u/js2222/G9KTPc8Ue/Geek-Chatbot\nBuild from scratch Go to https://partyrock.aws and sign in if needed. Select the Build your own app button, then select Create empty app. Review your empty app, including its placeholder title Set the page title to Geek Chatbot\nSelect the + Add widget button, then select User Input\nEdit the User Input widget’s properties Set Widget title to Geeky Topic Set Placeholder to Provide a geeky topic that your chatbot is obsessed with! Select the Save button Select the + Add widget button, then select Chatbot\nEdit the Chatbot widget’s properties\nSet Widget title to Talk to your Geek Chatbot! Set Placeholder to Geek out here! Set Model to Claude 3 Sonnet Set Initial message to Let’s geek out! Set Prompt to Pretend you are obsessed with TOPIC. You only want to talk about TOPIC. The user should only want to talk about TOPIC. - The user will now have a conversation with you. In the Prompt box, replace all occurrences of the word TOPIC using the @ symbol to select the Geeky Topic field Select the Save button Adjust the width of the Geeky Topic and Talk to your Geek Chatbot panels by dragging the resize handle in their lower right corners.\nHover over the area to the right of the Geeky Topic widget to see the Create Widget target area. You can click in that area to place a widget there.\nAlternatively, you could use the + Add widget button and move a widget into that area later. Add a Text Generation widget.\nEdit the Text Generation widget’s properties Set Widget title to Summary Set Model to Claude 3 Haiku Set Prompt to Write a one-line summary of the most recent message in the conversation: Then enter the @ symbol to select the Talk to your Geek chatbot! box as a source of content. Select the Save button Add an Image Generation widget.\nEdit the Image Generation widget’s properties\nSet Widget title to Image Set Model to Stable Diffusion XL Set Image description to An image of Then enter the @ symbol to select the Summary box as a source of content. Select the Save button Enter your geeky topic! Some possible topics: Aerospace engineering, Plumbing, Atlantic (Optional) Disappoint your chatbot "
+},
+{
+	"uri": "//localhost:1313/2-langchain/2.4-text/",
+	"title": "📚Text patterns Labs",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "//localhost:1313/2-langchain/2.1-prep/minimumiamperms/",
+	"title": "Minimum IAM Permissions (for system admins)",
+	"tags": [],
+	"description": "",
+	"content": "You can run this workshop with the default Administrator role.\nIf you need minimum permissions enabled for participants, here is the required policy JSON:\nAs an administrator, you will need to create one Cloud9 environment in the account to automatically create some required service roles needed for the workshop users. See AWS Cloud9 setup instructions here. You can then immediately delete the Cloud9 environment you created as an administrator.\n{ \u0026#34;Version\u0026#34;: \u0026#34;2012-10-17\u0026#34;, \u0026#34;Statement\u0026#34;: [ { \u0026#34;Sid\u0026#34;: \u0026#34;VisualEditor0\u0026#34;, \u0026#34;Effect\u0026#34;: \u0026#34;Allow\u0026#34;, \u0026#34;Action\u0026#34;: [ \u0026#34;cloud9:CreateEnvironmentSSH\u0026#34;, \u0026#34;cloud9:CreateEnvironmentEC2\u0026#34; ], \u0026#34;Resource\u0026#34;: \u0026#34;*\u0026#34;, \u0026#34;Condition\u0026#34;: { \u0026#34;Null\u0026#34;: { \u0026#34;cloud9:OwnerArn\u0026#34;: \u0026#34;true\u0026#34; } } }, { \u0026#34;Sid\u0026#34;: \u0026#34;VisualEditor1\u0026#34;, \u0026#34;Effect\u0026#34;: \u0026#34;Allow\u0026#34;, \u0026#34;Action\u0026#34;: \u0026#34;cloud9:GetUserPublicKey\u0026#34;, \u0026#34;Resource\u0026#34;: \u0026#34;*\u0026#34;, \u0026#34;Condition\u0026#34;: { \u0026#34;Null\u0026#34;: { \u0026#34;cloud9:UserArn\u0026#34;: \u0026#34;true\u0026#34; } } }, { \u0026#34;Sid\u0026#34;: \u0026#34;VisualEditor2\u0026#34;, \u0026#34;Effect\u0026#34;: \u0026#34;Allow\u0026#34;, \u0026#34;Action\u0026#34;: \u0026#34;cloud9:DescribeEnvironmentMemberships\u0026#34;, \u0026#34;Resource\u0026#34;: \u0026#34;*\u0026#34;, \u0026#34;Condition\u0026#34;: { \u0026#34;Null\u0026#34;: { \u0026#34;cloud9:UserArn\u0026#34;: \u0026#34;true\u0026#34;, \u0026#34;cloud9:EnvironmentId\u0026#34;: \u0026#34;true\u0026#34; } } }, { \u0026#34;Sid\u0026#34;: \u0026#34;VisualEditor3\u0026#34;, \u0026#34;Effect\u0026#34;: \u0026#34;Allow\u0026#34;, \u0026#34;Action\u0026#34;: [ \u0026#34;ssm:GetConnectionStatus\u0026#34;, \u0026#34;cloud9:TagResource\u0026#34;, \u0026#34;cloud9:GetUserSettings\u0026#34;, \u0026#34;iam:ListRoles\u0026#34;, \u0026#34;ssm:StartSession\u0026#34;, \u0026#34;iam:ListInstanceProfilesForRole\u0026#34;, \u0026#34;cloud9:ListEnvironments\u0026#34;, \u0026#34;cloud9:DescribeEnvironments\u0026#34;, \u0026#34;cloud9:ListTagsForResource\u0026#34;, \u0026#34;ec2:DescribeInstanceTypeOfferings\u0026#34;, \u0026#34;ec2:DescribeVpcs\u0026#34;, \u0026#34;iam:ListUsers\u0026#34;, \u0026#34;iam:GetUser\u0026#34;, \u0026#34;cloud9:UpdateUserSettings\u0026#34;, \u0026#34;ec2:DescribeSubnets\u0026#34;, \u0026#34;ec2:DescribeRouteTables\u0026#34; ], \u0026#34;Resource\u0026#34;: \u0026#34;*\u0026#34; }, { \u0026#34;Sid\u0026#34;: \u0026#34;VisualEditor4\u0026#34;, \u0026#34;Effect\u0026#34;: \u0026#34;Allow\u0026#34;, \u0026#34;Action\u0026#34;: \u0026#34;iam:CreateServiceLinkedRole\u0026#34;, \u0026#34;Resource\u0026#34;: \u0026#34;*\u0026#34;, \u0026#34;Condition\u0026#34;: { \u0026#34;StringLike\u0026#34;: { \u0026#34;iam:AWSServiceName\u0026#34;: \u0026#34;cloud9.amazonaws.com\u0026#34; } } }, { \u0026#34;Sid\u0026#34;: \u0026#34;VisualEditor5\u0026#34;, \u0026#34;Effect\u0026#34;: \u0026#34;Allow\u0026#34;, \u0026#34;Action\u0026#34;: [ \u0026#34;ssm:GetConnectionStatus\u0026#34;, \u0026#34;ssm:StartSession\u0026#34; ], \u0026#34;Resource\u0026#34;: \u0026#34;arn:aws:ec2:::instance/*\u0026#34;, \u0026#34;Condition\u0026#34;: { \u0026#34;StringEquals\u0026#34;: { \u0026#34;aws:CalledViaFirst\u0026#34;: \u0026#34;cloud9.amazonaws.com\u0026#34; }, \u0026#34;StringLike\u0026#34;: { \u0026#34;ssm:resourceTag/aws:cloud9:environment\u0026#34;: \u0026#34;\u0026#34; } } }, { \u0026#34;Sid\u0026#34;: \u0026#34;VisualEditor6\u0026#34;, \u0026#34;Effect\u0026#34;: \u0026#34;Allow\u0026#34;, \u0026#34;Action\u0026#34;: \u0026#34;ssm:StartSession\u0026#34;, \u0026#34;Resource\u0026#34;: [ \u0026#34;*\u0026#34; ] }, { \u0026#34;Sid\u0026#34;: \u0026#34;VisualEditor7\u0026#34;, \u0026#34;Effect\u0026#34;: \u0026#34;Allow\u0026#34;, \u0026#34;Action\u0026#34;: [ \u0026#34;bedrock:GetFoundationModelAvailability\u0026#34;, \u0026#34;bedrock:ListCustomModels\u0026#34;, \u0026#34;bedrock:ListProvisionedModelThroughputs\u0026#34;, \u0026#34;bedrock:ListFoundationModels\u0026#34;, \u0026#34;bedrock:InvokeModel\u0026#34;, \u0026#34;bedrock:InvokeModelWithResponseStream\u0026#34;, \u0026#34;bedrock:PutFoundationModelEntitlement\u0026#34;, \u0026#34;bedrock:ListFoundationModelAgreementOffers\u0026#34;, \u0026#34;bedrock:PutUseCaseForModelAccess\u0026#34;, \u0026#34;bedrock:GetUseCaseForModelAccess\u0026#34;, \u0026#34;bedrock:CreateFoundationModelAgreement\u0026#34;, \u0026#34;bedrock:ApplyGuardrail\u0026#34;, \u0026#34;bedrock:CreateGuardrail\u0026#34;, \u0026#34;bedrock:CreateGuardrailVersion\u0026#34;, \u0026#34;bedrock:DeleteGuardrail\u0026#34;, \u0026#34;bedrock:GetGuardrail\u0026#34;, \u0026#34;bedrock:ListGuardrails\u0026#34;, \u0026#34;bedrock:UpdateGuardrail\u0026#34;, \u0026#34;bedrock:ListAgents\u0026#34;, \u0026#34;bedrock:ListTagsForResource\u0026#34;, \u0026#34;bedrock:ListKnowledgeBases\u0026#34;, \u0026#34;bedrock:RetrieveAndGenerate\u0026#34;, \u0026#34;bedrock:DetectGeneratedContent\u0026#34; ], \u0026#34;Resource\u0026#34;: \u0026#34;*\u0026#34; } ] } "
+},
+{
+	"uri": "//localhost:1313/2-langchain/2.2-foundational/labf-5/",
+	"title": "Lab F-5: Inference Parameters",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "//localhost:1313/2-langchain/2.5-image/",
+	"title": "🌃Multimodal and Image Labs",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "//localhost:1313/1-partyrock/1.5-documentapp/",
+	"title": "Document chat app",
+	"tags": [],
+	"description": "",
+	"content": "Introduction In this lab, we will build a document chatbot app from scratch using PartyRock. We will connect Document and Chatbot widgets together to allow you to have a conversation about an uploaded document.\nNever post sensitive information (either personal information or sensitive business information) to PartyRock!\nYou can provide your own document in one of the following formats:\nPDF Text (.txt) Word (.docx) Markdown (.md) HTML CSV There is a limit of 120,000 characters in the uploaded file.\nUse a smaller uploaded file to minimize your PartyRock credit consumption.\nIf you want a simple, small PDF, you can download the PDF version of Amazon\u0026#39;s leadership principles here:\ramazon-leadership-principles-small.pdf\r(48 ko)\rBuild from scratch Go to https://partyrock.aws and sign in if needed. Select the Build your own app button, then select Create empty app. Review your empty app, including its placeholder title Set the page title to Document Chat\nSelect the + Add widget button, then select Document\nEdit the Document widget’s properties\nSet Widget title to Upload a Document Select the Save button Select the + Add widget button, then select Chatbot\nEdit the Chatbot widget’s properties\nSet Widget title to Chat About the Document Set Placeholder to Chat here! Set Model to Claude 3 Sonnet Set Initial message to Ready to chat! Set Prompt to: Support the conversation using the information within the document tags. \u0026lt;document\u0026gt;[Upload a Document]\u0026lt;/document\u0026gt; The user will now have a conversation with you. Select the Save button Upload a document and chat! You can download the PDF version of Amazon\u0026#39;s leadership principles here: amazon-leadership-principles-small.pdf\r(48 ko)\rNever post sensitive information (either personal information or sensitive business information) to PartyRock!\n"
+},
+{
+	"uri": "//localhost:1313/2-langchain/2.2-foundational/labf-6/",
+	"title": "Lab F-6: Controlling response variability",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "//localhost:1313/2-langchain/2.6-security/",
+	"title": "🔐Security and Safeguard Labs",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "//localhost:1313/1-partyrock/1.6-remixapp/",
+	"title": "Discovering &amp; Remixing apps",
+	"tags": [],
+	"description": "",
+	"content": "Introduction Remixing allows us to take an existing app, copy it, and then customize it. Any app on PartyRock can be remixed.\nDiscovery \u0026amp; remix an app Go to the PartyRock Discover page: https://partyrock.aws/discover Under Trending, select an app. In this case, we selected the ChatRPG app, but any app will do. Select the Remix button. This will create a copy of the app that you can then edit. You can now edit this remixed app. Navigate to the PartyRock Apps page: https://partyrock.aws/apps From this page, you can view, edit, and delete your apps "
+},
+{
+	"uri": "//localhost:1313/2-langchain/2.2-foundational/labf-7/",
+	"title": "Lab F-7: Streaming API",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "//localhost:1313/2-langchain/2.7-prompteng/",
+	"title": "💬Prompt Engineering Labs",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "//localhost:1313/1-partyrock/1.7-prompteng/",
+	"title": "Prompt engineering guide",
+	"tags": [],
+	"description": "",
+	"content": "For people who want to learn how to work with generative AI without having to use code and command line tools, a PartyRock-based prompt engineering guide is available below:\nPrompt Engineering Introduction Content Creation Providing Context to Reduce Hallucinations Targeting Your Questions Repurposing Content Summarizing Long Content Language Translation Analyzing Customer Communication Information Extraction Prompting to Create and Understand Code Doing More with Generative AI "
+},
+{
+	"uri": "//localhost:1313/2-langchain/2.2-foundational/labf-8/",
+	"title": "Lab F-8: Embeddings",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "//localhost:1313/1-partyrock/1.8-next/",
+	"title": "Next steps",
+	"tags": [],
+	"description": "",
+	"content": "Now that you have learned the basics, try creating your own apps with PartyRock!\nLearn more about PartyRock:\nPartyRock Guide Build AI apps with PartyRock and Amazon Bedrock Below are prompt engineering guides provided by some of Amazon Bedrock\u0026rsquo;s model providers:\nBedrock Prompt Engineering Guidelines AI21 Prompt Engineering Anthropic Prompt Engineering Anthropic Prompt Library Cohere Prompt Engineering Mistral Prompting Capabilities "
+},
+{
+	"uri": "//localhost:1313/2-langchain/2.8-bonus/",
+	"title": "🎁Bonus Labs",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "//localhost:1313/2-langchain/2.2-foundational/labf-9/",
+	"title": "Lab F-9: Intro to Streamlit",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "//localhost:1313/2-langchain/2.2-foundational/modelselection/",
+	"title": "Model Selection",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "//localhost:1313/categories/",
+	"title": "Categories",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "//localhost:1313/tags/",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+}]
