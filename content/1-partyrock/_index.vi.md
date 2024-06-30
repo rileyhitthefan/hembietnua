@@ -11,7 +11,7 @@ pre : " <b>1. </b> "
 
  Workshop này dùng tính năng của PartyRock để tạo ra các ứng dụng gen AI khác nhau, và không đòi hỏi người thực hành có kinh nghiệm sử dụng gen AI, viết code hoặc phát triên ứng dụng.
 
-#### Content
+#### Mục lục
  1. [Làm quen với PartyRock](1.1-register/)
  2. [Tạo ứng dụng](1.2-createapp/)
  3. [Ứng dụng tóm tắt nội dung](1.3-summaryapp/)

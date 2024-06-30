@@ -1,0 +1,176 @@
+[
+{
+	"uri": "//localhost:1313/vi/2-langchain/2.1-prep/",
+	"title": "🏡 Các bước chuẩn bị",
+	"tags": [],
+	"description": "",
+	"content": "Trên Console AWS, chọn region (us-east-1)\n"
+},
+{
+	"uri": "//localhost:1313/vi/2-langchain/2.1-prep/bedrocksetup/",
+	"title": "Amazon Bedrock Setup",
+	"tags": [],
+	"description": "",
+	"content": "Chúng ta sử dụng Amazon Bedrock để truy cập các LLM model nền tảng trong workshop này.\nSau đây chúng ta sẽ chỉnh sửa quyền truy cấp các model trong Amazon Bedrock để tạo và chạy các ứng dụng gen AI. Amazon Bedrock cung cấp nhiều model nền tảng từ nhiều nhà cung cấp.\nHướng dẫn thiết lập Amazon Bedrock Truy cập Amazon Bedrock bằng AWS Console Mở rộng menu. Chọn nút Enable specific models button. Đánh dấu để chọn các mô hình sau đây. Nếu sử dụng tài khoản AWS cá nhân, bạn sẽ không bị tính phí kích hoạt truy cập, chỉ bị tính phí sử dụng model khi thực hành. AI21 \u0026gt; Jurassic-2 Ultra Amazon (select Amazon to automatically select all Amazon Titan models) Anthropic \u0026gt; Claude 3 Sonnet Cohere \u0026gt; Command Meta \u0026gt; Llama 2 Chat 70B Mistral AI \u0026gt; Mixtral 8x7B Instruct Chọn Next.\nỞ trang Review and submit, chọn Submit. Quan sát trạng thái truy cập, có thể chọn Refresh để kiểm tra quá trình cập nhật từ In Progress thành Access granted.\nXác minh trạng thái Access granted cho những model đã chọn ở trên.\nCongratulations!\nChúc mừng bạn đã thành công thiết lập Amazon Bedrock!\n"
+},
+{
+	"uri": "//localhost:1313/vi/",
+	"title": "Tạo Gen AI bằng Amazon Bedrock và LangChain",
+	"tags": [],
+	"description": "",
+	"content": "Tạo Gen AI bằng Amazon Bedrock và LangChain Tổng quan Workshop này giới thiệu các khái niệm của gen AI thông qua các bài lab thực hành.\nNội dung Lựa chọn 1: Thực hành với ParyRock (không yêu cầu tài khoản AWS) Làm quen với PartyRock Tạo ứng dụng Ứng dụng tóm tắt nội dung Ứng dụng chatbot Ứng dụng chatbot với nội dung tài liệu Khám phá và tuỳ chỉnh ứng dụng có sẵn Hướng dẫn prompt engineering Lựa chọn 2: Thực hành với Amazon Bedrock \u0026amp; LangChain (yêu cầu tài khoản AWS) Các bước chuẩn bị Thực hành với các khái niệm nền tảng Thực hành AI với các mẫu cơ bản Thực hành AI với các mẫu văn bản Thực hành AI với hình ảnh và tập tin đa phương tiện Thực hành bảo mật và phương thức an toàn với AI Thực hành prompt engineering Thực hành bổ sung Dọn dẹp tài nguyên "
+},
+{
+	"uri": "//localhost:1313/vi/1-partyrock/",
+	"title": "Thực hành với PartyRock",
+	"tags": [],
+	"description": "",
+	"content": "Tổng quan PartyRock là một ứng dụng chạy bởi Amazon Bedrock cho phép người dùng tạo và chạy các ứng dụng gen AI, đặc biệt phù hợp cho mục đích học tập. PartyRock không yêu cầu tài khoản AWS, và hỗ trợ đăng nhập bằng các tài khoản mạng xã hội (Amazon.com, Apple, Google).\nWorkshop này dùng tính năng của PartyRock để tạo ra các ứng dụng gen AI khác nhau, và không đòi hỏi người thực hành có kinh nghiệm sử dụng gen AI, viết code hoặc phát triên ứng dụng.\nMục lục Làm quen với PartyRock Tạo ứng dụng Ứng dụng tóm tắt nội dung Ứng dụng chatbot Ứng dụng chat bằng tập tin Khám phá và tuỳ chỉnh ứng dụng có sẵn Hướng dẫn prompt engineering "
+},
+{
+	"uri": "//localhost:1313/vi/1-partyrock/1.1-register/",
+	"title": "Làm quen với PartyRock",
+	"tags": [],
+	"description": "",
+	"content": "Tạo tài khoản và Đăng nhập Truy cập https://partyrock.aws Chọn Sign in và đăng nhập bằng tài khoản Google, Apple hoặc Amazon (Amazon.com) Màn hình sau khi đăng nhập: Truy cập icon cánh cửa Backstage trong phần mục lục: https://partyrock.aws/backstage Backstage cho phép người dùng kiểm tra PartyRock credits đã sử dụng, thay đổi tuỳ chọn chia sẻ dữ liệu, và truy cập tài liệu hướng dẫn của PartyRock "
+},
+{
+	"uri": "//localhost:1313/vi/2-langchain/",
+	"title": "Thực hành với Bedrock &amp; LangChain",
+	"tags": [],
+	"description": "",
+	"content": "Tổng quan Amazon Bedrock là một dịch vụ được quản lý hoàn toàn bởi AWS cung cấp truy cấp đến các mô hình ngôn ngữ nền tảng của Amazon các bên thứ ba bằng một bộ API duy nhất cho cả tạo văn bản và tạo hình ảnh.\nChúng ta sẽ sử dụng LangChain để xây dựng các mẫu gen AI với Amazon Bedrock thông một loạt bài thực hành cho các cấp độ kỹ năng khác nhau từ sơ đến trung cấp bằng cách tìm hiểu cách sử dụng khả năng của các thư viện và mô hình để xây dựng nguyên mẫu cho nhiều trường hợp sử dụng.\nLangChain cung cấp các chức năng thuận tiện để tương tác với các mô hình của Amazon Bedrock và các dịch vụ liên quan như cơ sở dữ liệu vector, bao gồm thư viện Python và JavaScript.\nStreamlit cho phép nhanh chóng tạo web bằng Python mà không cần kỹ năng phát triển giao diện người dùng.\nSau khi hoàn thành phần Chuẩn bị, bạn có thể hoàn thành các bài thực hành theo bất kỳ thứ tự nào.\nMục lục 🏡Các bước chuẩn bị 🧱Thực hành với các khái niệm nền tảng 📙Thực hành AI với các mẫu cơ bản 📚Thực hành AI với các mẫu văn bản 🌃Thực hành AI với hình ảnh và tập tin đa phương tiện 🔐Thực hành bảo mật và phương thức an toàn với AI 💬Thực hành prompt engineering 🎁Thực hành bổ sung "
+},
+{
+	"uri": "//localhost:1313/vi/2-langchain/2.1-prep/cloud9setup/",
+	"title": "AWS Cloud9 Setup",
+	"tags": [],
+	"description": "",
+	"content": "Chúng ta sẽ dùng AWS Cloud9 làm IDE. AWS Cloud9 có thể tạo ứng dụng với Amazon Bedrock - giống như các công cụ khác (VS Code, PyCharm, v.v.), Amazon SageMaker Studio ,hoặc Jupyter Notebook.\nSau đây chúng ta sẽ tạo môi trường AWS Cloud9 để tạo và chạy các ứng dụng gen AI.\nChú Ý\n- AWS Cloud9 sẽ được chạy từ cùng một tài khoản và region của các model Bedrock đã được kích hoạt.\n- Tài khoản và region có cấu hình VPC mặc định (mặc định của AWS).\nNếu có vấn đề xảy ra, bạn có thể phải sử dụng Bedrock từ máy tính cá nhân hoặc tạo môi trường ảo thay thế.\nCloud9 Setup instructions Đảm bảo bạn đang ở cùng region từ bước thiết lập Amazon Bedrock.\nTừ console AWS, tìm và chọn Cloud9 từ thanh tìm kiếm để truy cập.\nChọn Create environment Chỉnh sửa thông tin môi trường. Name: bedrock-environment. Chỉnh sửa thông tin EC2.\nInstance type là t3.small Platform là Ubuntu Server 22.04 LTS Timeout là 4 hours Chọn Ubuntu làm ngôn ngữ điều hành\nĐảm bảo môi trường Cloud9 sẽ chạy Ubuntu Server 22.04 LTS để có phiên bản Python có thể dụng LangChain và các thư viện quan trọng khác.\nChọn Create. Chờ đợi có đáng sợ.\nKhi môi trường khởi tạo thành công, sẽ có thông báo \u0026ldquo;Successfully created bedrock-environment\u0026rdquo; Chọn Environments list, chọn Open để chạy Cloud9 IDE trong một tab mới. Xử lý lỗi khi tạo môi trường\n- Nếu có thông báo lỗi về instance type không tồn tại trong AZ, xoá môi trường vừa tạo và khởi tạo lại bằng isntance type khác.\nKiểm tra môi trường Cloud9 đang chạy. Có thể thay đổi vị trí các cửa sổ tuỳ ý Congratulations!\nBạn đã tạo thành công IDE AWS Cloud9!\n"
+},
+{
+	"uri": "//localhost:1313/vi/1-partyrock/1.2-createapp/",
+	"title": "Tạo ứng dụng",
+	"tags": [],
+	"description": "",
+	"content": "Chạy thử ứng dụng tại đây: https://partyrock.aws/u/js2222/9ktuP8ntP/PaintBrush\nGiới thiệu Chúng ta sẽ tạo một ứng dụng gen AI bằng cách miêu tả các đặc điểm mong muốn. PartyRock hỗ trợ tính năng app builder bằng cách tự động xây dựng ứng dụng dựa trên ý tưởng của người dùng. Sau khi khởi tạo, người dùng có thể chạy mặc định, hoặc tuỳ chỉnh thông qua app editor, hoặc xoá ứng dụng.\nCác bước sau đây hỗ trợ tạo ứng dụng tạo hình ảnh cho phép người dùng chỉ định chủ thể bức tranh và phong cách vẽ. Bạn có thể đưa ra bất kỳ ý tưởng tuỳ thích.\nTạo ứng dụng bằng App Builder Truy cập https://partyrock.aws và đăng nhập. Chọn nút Build your own app. Miêu tả ứng dụng theo ý thích của bạn. Sao chép câu lệnh sau đây và dán phần miêu tả: A painting generator that lets you choose a subject and style for the painting Chọn Generate. Xem lại ứng dụng vừa tạo. Ứng dụng tạo ra có thể có một số khác biệt!\nDùng thử ứng dụng! Trong ví dụ này, chúng ta chọn Painting Subject là The Grand Canyon và Painting Style là Dadaist. Các ứng dụng có thể khác biệt. Sau khi ứng dụng tạo ra hình ảnh, bạn có thể yêu cầu hình ảnh khác bằng cách chọn Retry ở góc phải bên trên hộp tạo ảnh.\nTạo snapshots (Tuỳ chọn) (Tuỳ chọn) Chọn icon camera \u0026ndash; nút Snapshot để lưu lại snapshot yêu cầu của bạn và output của AI.\nSnapshot được lưu trong My snapshots. Bạn có thể sao chép đường dẫn chia sẽ của các snapshots. Đừng bao giờ chia sẻ các thông tin cá nhân nhạy cảm trong snapshot hoặc PartyRock.\n(Tuỳ chọn) Chọn nút Snapshots ở đầu trang\nBạn có thể xem lại hoặc xoá các snapshots ở đây. Chế độ riêng tư (Tuỳ chọn) (Tuỳ chọn) Bạn có thể xem lại các ứng dụng đã tạo trong mục Apps của mục lục. (Tuỳ chọn) Để chỉnh chế độ riêng tư, vào editor của ứng dụng mong muốn và chọn public, sau đó chọn Make private. "
+},
+{
+	"uri": "//localhost:1313/vi/2-langchain/2.1-prep/labsetup/",
+	"title": "Lab setup",
+	"tags": [],
+	"description": "",
+	"content": "Tảo các thiết lập và tài nguyên cần thiết Trên AWS Cloud9 IDE, chọn bash terminal. Dán và chạy câu lệnh sau vào terminal để tải và giái nén code. cd ~/environment/\rcurl \u0026#39;https://static.us-east-1.prod.workshops.aws/public/4aaab724-21a5-4155-80ee-db443f910e6c/assets/workshop.zip\u0026#39; --output workshop.zip\runzip workshop.zip Sau khi thành công, kết quả giải nén sẽ hiện lên terminal.\nTải các tài nguyên phụ thuộc pip3 install -r ~/environment/workshop/setup/requirements.txt -U Thông báo tải thành công (bỏ qua warning):\nKiểm tra thiết lập bằng câu lệnh: cd ~/environment/\rpython ~/environment/workshop/completed/api/bedrock_api.py Nếu thiết lập hoàn chỉnh, terminal sẽ output câu trả lời về Manchester, New Hampshire\nCác bài thực hành! Bạn có thể chọn bài thực hành bất kỳ để bắt đầu hoàn thiện workshop, không quan trọng kinh nghiệm.\n🧱Foundational concepts Labs 📙Basic patterns Labs 📚Text patterns Labs 🌃Multimodal \u0026amp; Image Labs 🔐Security \u0026amp; Safeguard Labs 💬Prompt Engineering Labs 🎁Bonus Labs "
+},
+{
+	"uri": "//localhost:1313/vi/1-partyrock/1.3-summaryapp/",
+	"title": "Ứng dụng tóm tắt nội dung",
+	"tags": [],
+	"description": "",
+	"content": "Chạy thử ứng dụng tại đây: https://partyrock.aws/u/js2222/aw3_JHzyG/Content-Summarizer\nGiới thiệu Chúng ta sẽ tự tạo một ứng dụng tóm tắt nội dung đơn giản. Ngoài tính năng tạo app bằng câu lệnh miêu tả, PartyRock cũng cho phép người dùng tạo ứng dụng bằng app editor trên website.\nCác bước sau đây hướng dẫn sử dụng tiện ích User input và Text generation để tự động tạo ra tóm tắt chi tiết và tóm tắt một dòng từ các nội dung dài.\nTạo ứng dụng trống Go to https://partyrock.aws và đăng nhập. Chọn nút Build your own app, chọn Create empty app. Xem lại ứng dụng vừa tạo và tên ứng dụng ngẫu nhiên. Đổi tên ứng dụng thành Content Summarizer Thêm tiện tính User input và Text generation Chọn nút + Add widget, chọn mục Static Text Sửa các đặc tính của Static Text. Đặt tên tiện ích Welcome\nĐổi Content:\n# Welcome to the Content Summarizer application!\rInstructions:\r1. Paste your content\r2. Get your summaries!\r## WARNING: Never share sensitive information when building or using a PartyRock app. This includes personal information and internal company information. Có thể điều chỉnh kích cỡ của các tiện ích bằng cách kéo từ góc phải bên dưới ô tiện ích.\nBấm Save\nTiện ích Static Text dùng ngôn ngữ Markdown để hiển thị nội dung.\nChọn nút + Add widget, chọn User Input Sửa các đặc tính của tiện ích User Input.\nĐặt Widget title là Paste your content here Đặt Placeholder là Content to summarize (NO SENSITIVE CONTENT) Chọn Save. Thêm các tiện ích AI Chọn nút + Add widget, sau đó chọn Text Generation\nSửa các đặc tính của tiện ích Text Generation.\nĐặt Widget title là Detailed summary Đặt Model là Command Trong Prompt, nhập Write a detailed summary based on this content:, nhập @ và chọn Paste your content here để đặt input người dùng làm nội dung gốc. Chọn Save. Điều chỉnh kích cỡ của tiện ích Detailed summary bằng cách kéo từ góc phải bên dưới ô tiện ích.\nThêm tiện ích Text Generation.\nSửa các đặc tính của tiện ích Text Generation.\nĐặt Widget title là One-line summary Đặt Model là Claude 3 Sonnet Trong Prompt, nhập Write a one-line summary based on this content:, sau đó nhập @ và chọn Paste your content here để đặt input người dùng làm nội dung gốc. Chọn vào mục Advanced settings và chỉnh Temperature thành 0.5 để tạo sự ngẫu nhiên cho mỗi câu trả lời của model. Chọn Save. Test the app Sao chép đoạn sau vào ô Paste your content here.\nPartyRock, an Amazon Bedrock playground, is a shareable generative AI app building playground. Experiment with prompt engineering in a hands-on and fun way. In a short time, you can build, share, and remix apps, to get inspired while playing with generative AI. For example, you can:\rBuild an app to generate dad jokes on the topic of your choice.\rCreate the perfect playlist based on your musical tastes.\rRecommend what to serve based on ingredients in your pantry.\rCreate and play a virtual trivia game online with friends from around the world.\rCreate an AI storyteller to guide your next fantasy -playing campaign.\rBy building and playing with PartyRock apps, you learn about the fundamental techniques and capabilities needed to get started with generative AI, including understanding how a foundation model responds to a given prompt, experimenting with different text-based prompts, and chaining prompts together. Anyone can access PartyRock through its intuitive web-based UI. For anyone interested in learning the fundamental skills needed to harness the power of generative AI, PartyRock uses Amazon Bedrock to create an accessible environment for experimentation with powerful foundational models (FMs). The tool builds confidence by providing new PartyRock users with free trial use for a limited time, and the PartyRock Guide helps learners extend their knowledge. Builders who are ready to move into production can proceed to the Bedrock console using the basic prompts and skills developed in PartyRock.\rAny builder can experiment with PartyRock by creating a profile using a social login from amazon.com, Apple, or Google. PartyRock is separate from the AWS console and does not require an AWS account to get started.\rPartyRock is for EVERYONE. It has been designed in a way that is friendly and accessible to builders of all skill levels, particularly those who have limited experience with generative AI. Even if you have no coding experience, you can use text-based prompts to experiment with foundation models and create your own generative AI-powered apps. Developers can explore model capabilities and refine prompt engineering techniques in PartyRock without managing API calls. Đừng bao giờ chia sẻ các thông tin cá nhân nhạy cảm trong snapshot hoặc PartyRock.\n"
+},
+{
+	"uri": "//localhost:1313/vi/1-partyrock/1.4-chatbot/",
+	"title": "Ứng dụng chatbot",
+	"tags": [],
+	"description": "",
+	"content": "Chạy thử ứng dụng tại đây: https://partyrock.aws/u/js2222/G9KTPc8Ue/Geek-Chatbot\nGiới thiệu Chúng ta sẽ tạo một ứng dụng chatbot bằng PartyRock, kết hợp các tiện ích User Input, Chatbot, Text Generation và Image Generation bẳng prompt chaining.\nPrompt chaining dùng output của một tiện ích AI làm thành input của một tiện ích AI khác. Trong trường hợp này, chúng ta sẽ tạo hình ảnh dựa trên nội dung hội thoại với chatbot\nTạo từ ứng dụng trống Truy cập https://partyrock.aws và đăng nhập. Chọn nút Build your own app, sau đó chọn Create empty app. Xem lại ứng dụng vừa tạo và tên ứng dụng ngẫu nhiên. Đổi tên ứng dụng thành Geek Chatbot\nChọn nút + Add widget, chọn User Input\nSửa các đặc tính của User Input Đặt Widget title là Geeky Topic Đặt Placeholder là Provide a geeky topic that your chatbot is obsessed with! Chọn Save. Chọn nút + Add widget, chọn Chatbot\nSửa các đặc tính của Chatbot\nĐặt Widget title là Talk to your Geek Chatbot! Đặt Placeholder là Geek out here! Đặt Model là Claude 3 Sonnet Đặt Initial message là Let’s geek out! Đặt Prompt là Pretend you are obsessed with TOPIC. You only want to talk about TOPIC. The user should only want to talk about TOPIC. - The user will now have a conversation with you. Trong ô Prompt, dùng ký tự @ để thay những chữ TOPIC bằng mục Geeky Topic Chọn Save. Điều chỉnh kích cỡ các tiện ích Geeky Topic và Talk to your Geek Chatbot bằng các kéo từ góc phải bên dưới các ô tiện ích.\nChọn nút + Add widget hoặc ô Create widget ở các vùng chấm đen.\nThêm tiện ích Text Generation.\nSửa các đặc tính của Text Generation Đặt Widget title là Summary Đặt Model là Claude 3 Haiku Đặt Prompt là Write a one-line summary of the most recent message in the conversation: Nhập ký tự @ và chọn mục Talk to your Geek chatbot! để thiết lập nội dung gốc Chọn Save Thêm tiện ích Image Generation.\nSửa các đặc tính của Image Generation\nĐặt Widget title là Image Đặt Model là Stable Diffusion XL Đặt Image description là An image of Nhập ký tự @ và chọn mục Summary để thiết lập nội dung gốc Select the Save button Chọn chủ đề! Một số chủ đề: Aerospace engineering, Plumbing, Atlantic (Tuỳ chọn) Phản biện "
+},
+{
+	"uri": "//localhost:1313/vi/2-langchain/2.1-prep/minimumiamperms/",
+	"title": "Minimum IAM Permissions (for system admins)",
+	"tags": [],
+	"description": "",
+	"content": "Bạn có thể thực hành trong workshop với role Administrator mặc định.\nNếu cần kích hoạt quyền tối thiểu cho người tham gia, sao chép chính sách tối thiểu cần thiết trong JSON:\nVới tư cách admin, bạn sẽ phải tạo môi trường Cloud9 trong tài khoản để tự động tạo các service role cần thiết cho người thực hành. Xem hướng dẫn thiết lập AWS Cloud9. Sau đó, có thể xóa ngay môi trường Cloud9 mà bạn đã tạo với tư cách admin.\n{ \u0026#34;Version\u0026#34;: \u0026#34;2012-10-17\u0026#34;, \u0026#34;Statement\u0026#34;: [ { \u0026#34;Sid\u0026#34;: \u0026#34;VisualEditor0\u0026#34;, \u0026#34;Effect\u0026#34;: \u0026#34;Allow\u0026#34;, \u0026#34;Action\u0026#34;: [ \u0026#34;cloud9:CreateEnvironmentSSH\u0026#34;, \u0026#34;cloud9:CreateEnvironmentEC2\u0026#34; ], \u0026#34;Resource\u0026#34;: \u0026#34;*\u0026#34;, \u0026#34;Condition\u0026#34;: { \u0026#34;Null\u0026#34;: { \u0026#34;cloud9:OwnerArn\u0026#34;: \u0026#34;true\u0026#34; } } }, { \u0026#34;Sid\u0026#34;: \u0026#34;VisualEditor1\u0026#34;, \u0026#34;Effect\u0026#34;: \u0026#34;Allow\u0026#34;, \u0026#34;Action\u0026#34;: \u0026#34;cloud9:GetUserPublicKey\u0026#34;, \u0026#34;Resource\u0026#34;: \u0026#34;*\u0026#34;, \u0026#34;Condition\u0026#34;: { \u0026#34;Null\u0026#34;: { \u0026#34;cloud9:UserArn\u0026#34;: \u0026#34;true\u0026#34; } } }, { \u0026#34;Sid\u0026#34;: \u0026#34;VisualEditor2\u0026#34;, \u0026#34;Effect\u0026#34;: \u0026#34;Allow\u0026#34;, \u0026#34;Action\u0026#34;: \u0026#34;cloud9:DescribeEnvironmentMemberships\u0026#34;, \u0026#34;Resource\u0026#34;: \u0026#34;*\u0026#34;, \u0026#34;Condition\u0026#34;: { \u0026#34;Null\u0026#34;: { \u0026#34;cloud9:UserArn\u0026#34;: \u0026#34;true\u0026#34;, \u0026#34;cloud9:EnvironmentId\u0026#34;: \u0026#34;true\u0026#34; } } }, { \u0026#34;Sid\u0026#34;: \u0026#34;VisualEditor3\u0026#34;, \u0026#34;Effect\u0026#34;: \u0026#34;Allow\u0026#34;, \u0026#34;Action\u0026#34;: [ \u0026#34;ssm:GetConnectionStatus\u0026#34;, \u0026#34;cloud9:TagResource\u0026#34;, \u0026#34;cloud9:GetUserSettings\u0026#34;, \u0026#34;iam:ListRoles\u0026#34;, \u0026#34;ssm:StartSession\u0026#34;, \u0026#34;iam:ListInstanceProfilesForRole\u0026#34;, \u0026#34;cloud9:ListEnvironments\u0026#34;, \u0026#34;cloud9:DescribeEnvironments\u0026#34;, \u0026#34;cloud9:ListTagsForResource\u0026#34;, \u0026#34;ec2:DescribeInstanceTypeOfferings\u0026#34;, \u0026#34;ec2:DescribeVpcs\u0026#34;, \u0026#34;iam:ListUsers\u0026#34;, \u0026#34;iam:GetUser\u0026#34;, \u0026#34;cloud9:UpdateUserSettings\u0026#34;, \u0026#34;ec2:DescribeSubnets\u0026#34;, \u0026#34;ec2:DescribeRouteTables\u0026#34; ], \u0026#34;Resource\u0026#34;: \u0026#34;*\u0026#34; }, { \u0026#34;Sid\u0026#34;: \u0026#34;VisualEditor4\u0026#34;, \u0026#34;Effect\u0026#34;: \u0026#34;Allow\u0026#34;, \u0026#34;Action\u0026#34;: \u0026#34;iam:CreateServiceLinkedRole\u0026#34;, \u0026#34;Resource\u0026#34;: \u0026#34;*\u0026#34;, \u0026#34;Condition\u0026#34;: { \u0026#34;StringLike\u0026#34;: { \u0026#34;iam:AWSServiceName\u0026#34;: \u0026#34;cloud9.amazonaws.com\u0026#34; } } }, { \u0026#34;Sid\u0026#34;: \u0026#34;VisualEditor5\u0026#34;, \u0026#34;Effect\u0026#34;: \u0026#34;Allow\u0026#34;, \u0026#34;Action\u0026#34;: [ \u0026#34;ssm:GetConnectionStatus\u0026#34;, \u0026#34;ssm:StartSession\u0026#34; ], \u0026#34;Resource\u0026#34;: \u0026#34;arn:aws:ec2:::instance/*\u0026#34;, \u0026#34;Condition\u0026#34;: { \u0026#34;StringEquals\u0026#34;: { \u0026#34;aws:CalledViaFirst\u0026#34;: \u0026#34;cloud9.amazonaws.com\u0026#34; }, \u0026#34;StringLike\u0026#34;: { \u0026#34;ssm:resourceTag/aws:cloud9:environment\u0026#34;: \u0026#34;\u0026#34; } } }, { \u0026#34;Sid\u0026#34;: \u0026#34;VisualEditor6\u0026#34;, \u0026#34;Effect\u0026#34;: \u0026#34;Allow\u0026#34;, \u0026#34;Action\u0026#34;: \u0026#34;ssm:StartSession\u0026#34;, \u0026#34;Resource\u0026#34;: [ \u0026#34;*\u0026#34; ] }, { \u0026#34;Sid\u0026#34;: \u0026#34;VisualEditor7\u0026#34;, \u0026#34;Effect\u0026#34;: \u0026#34;Allow\u0026#34;, \u0026#34;Action\u0026#34;: [ \u0026#34;bedrock:GetFoundationModelAvailability\u0026#34;, \u0026#34;bedrock:ListCustomModels\u0026#34;, \u0026#34;bedrock:ListProvisionedModelThroughputs\u0026#34;, \u0026#34;bedrock:ListFoundationModels\u0026#34;, \u0026#34;bedrock:InvokeModel\u0026#34;, \u0026#34;bedrock:InvokeModelWithResponseStream\u0026#34;, \u0026#34;bedrock:PutFoundationModelEntitlement\u0026#34;, \u0026#34;bedrock:ListFoundationModelAgreementOffers\u0026#34;, \u0026#34;bedrock:PutUseCaseForModelAccess\u0026#34;, \u0026#34;bedrock:GetUseCaseForModelAccess\u0026#34;, \u0026#34;bedrock:CreateFoundationModelAgreement\u0026#34;, \u0026#34;bedrock:ApplyGuardrail\u0026#34;, \u0026#34;bedrock:CreateGuardrail\u0026#34;, \u0026#34;bedrock:CreateGuardrailVersion\u0026#34;, \u0026#34;bedrock:DeleteGuardrail\u0026#34;, \u0026#34;bedrock:GetGuardrail\u0026#34;, \u0026#34;bedrock:ListGuardrails\u0026#34;, \u0026#34;bedrock:UpdateGuardrail\u0026#34;, \u0026#34;bedrock:ListAgents\u0026#34;, \u0026#34;bedrock:ListTagsForResource\u0026#34;, \u0026#34;bedrock:ListKnowledgeBases\u0026#34;, \u0026#34;bedrock:RetrieveAndGenerate\u0026#34;, \u0026#34;bedrock:DetectGeneratedContent\u0026#34; ], \u0026#34;Resource\u0026#34;: \u0026#34;*\u0026#34; } ] } "
+},
+{
+	"uri": "//localhost:1313/vi/1-partyrock/1.5-documentapp/",
+	"title": "Ứng dụng chat bằng tập tin",
+	"tags": [],
+	"description": "",
+	"content": "Giới thiệu Chúng ta sẽ tạo một ứng dụng chatbot bằng tập tin bằng PartyRock, kết hợp tiện tích Document và Chatbot để trò chuyện về một tập tin được tải lên.\nĐừng bao giờ chia sẻ các thông tin cá nhân/doanh nghiệp nhạy cảm trên PartyRock.\nMột số định dạng tập tin được hỗ trợ:\nPDF Text (.txt) Word (.docx) Markdown (.md) HTML CSV Mỗi tập tin giới hạn số lượng 120,000 ký tự.\nCó thể chọn tải lên file nhỏ hơn để giảm thiểu credits PartyRock.\nPDF Amazon\u0026#39;s leadership principles, file nhỏ:\ramazon-leadership-principles-small.pdf\r(48 ko)\rTạo từ ứng dụng trống Truy cập https://partyrock.aws và đăng nhập. Chọn nút Build your own app, sau đó chọn Create empty app. Xem lại ứng dụng vừa tạo và tên ứng dụng ngẫu nhiên. Đặt the page title là Document Chat\nChọn nút + Add widget, sau đó chọn Document\nSửa các đặc tính của tiện ích Document\nĐặt Widget title là Upload a Document Chọn Save. Chọn nút + Add widget, sau đó chọn Chatbot\nEdit the Chatbot widget’s properties\nĐặt Widget title là Chat About the Document Đặt Placeholder là Chat here! Đặt Model là Claude 3 Sonnet Đặt Initial message là Ready to chat! Đặt Prompt là: Support the conversation using the information within the document tags. \u0026lt;document\u0026gt;[Upload a Document]\u0026lt;/document\u0026gt; The user will now have a conversation with you. Chọn Save Tải tập tin lên để bắt đầu trò chuyện! PDF Amazon\u0026#39;s leadership principles, file nhỏ:\ramazon-leadership-principles-small.pdf\r(48 ko)\rĐừng bao giờ chia sẻ các thông tin cá nhân/doanh nghiệp nhạy cảm trên PartyRock.\n"
+},
+{
+	"uri": "//localhost:1313/vi/1-partyrock/1.6-remixapp/",
+	"title": "Khám phá và remix ứng dụng có sẵn",
+	"tags": [],
+	"description": "",
+	"content": "Giới thiệu Remixing cho phép người dùng sử dụng, tạo bản sao và tuỳ chỉnh bất kỳ ứng dụng có sẵn trên PartyRock.\nKhám phá và remix ứng dụng có sẵn Truy cập trand PartyRock Discover: https://partyrock.aws/discover Trong mục Trending, chọn một ứng dụng. Bài thực hành sử dụng ứng dụng ChatRPG. Chọn nút Remix. Ứng dụng bạn chọn sẽ được sao chép về tài khoản của bạn, và có thể tuỳ chỉnh theo ý muốn. Truy cập trang PartyRock Apps: https://partyrock.aws/apps Bạn có thể xem, chỉnh sửa và xoá các ứng dụng của bạn ở đây. "
+},
+{
+	"uri": "//localhost:1313/vi/1-partyrock/1.7-prompteng/",
+	"title": "Hướng dẫn prompt engineering",
+	"tags": [],
+	"description": "",
+	"content": "Dành cho người dùng muốn học cách sử dụng gen AI không cần code hoặc công cụ giao diện dòng lệnh, sau đây là một số hướng dẫn prompt engineer với PartyRock:\nPrompt Engineering Introduction Content Creation Providing Context to Reduce Hallucinations Targeting Your Questions Repurposing Content Summarizing Long Content Language Translation Analyzing Customer Communication Information Extraction Prompting to Create and Understand Code Doing More with Generative AI "
+},
+{
+	"uri": "//localhost:1313/vi/1-partyrock/1.8-next/",
+	"title": "Các bước tiếp theo",
+	"tags": [],
+	"description": "",
+	"content": "Tìm hiểu thêm về PartyRock:\nPartyRock Guide Build AI apps with PartyRock and Amazon Bedrock Một số hướng dẫn prompt engineer cung cấp bởi các đối tác của Amazon Bedrock:\nBedrock Prompt Engineering Guidelines AI21 Prompt Engineering Anthropic Prompt Engineering Anthropic Prompt Library Cohere Prompt Engineering Mistral Prompting Capabilities "
+},
+{
+	"uri": "//localhost:1313/vi/2-langchain/2.8-bonus/",
+	"title": "2.8 Bonus",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "//localhost:1313/vi/2-langchain/2.7-prompteng/",
+	"title": "2.7 Prompteng",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "//localhost:1313/vi/2-langchain/2.6-security/",
+	"title": "2.6 Security",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "//localhost:1313/vi/2-langchain/2.5-image/",
+	"title": "2.5 Image",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "//localhost:1313/vi/2-langchain/2.4-text/",
+	"title": "2.4 Text",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "//localhost:1313/vi/2-langchain/2.3-basic/",
+	"title": "2.3 Basic",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "//localhost:1313/vi/2-langchain/2.2-foundational/",
+	"title": "2.2 Foundational",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "//localhost:1313/vi/categories/",
+	"title": "Categories",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "//localhost:1313/vi/tags/",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+}]

@@ -1,0 +1,1461 @@
+<!DOCTYPE html>
+<html lang="vi" class="js csstransforms3d">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.127.0">
+    <meta name="description" content="">
+<meta name="author" content="journeyoftheaverageguy@gmail.com">
+
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
+    <title>Ứng dụng tóm tắt nội dung :: Tạo Gen AI bằng Amazon Bedrock và LangChain</title>
+
+    
+    <link href="/css/nucleus.css?1719737447" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1719737447" rel="stylesheet">
+    <link href="/css/hybrid.css?1719737447" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1719737447" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1719737447" rel="stylesheet">
+    <link href="/css/auto-complete.css?1719737447" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1719737447" rel="stylesheet">
+    <link href="/css/theme.css?1719737447" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1719737447" rel="stylesheet">
+    
+    <link href="/css/theme-workshop.css?1719737447" rel="stylesheet">
+    
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1719737447"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/vi/1-partyrock/1.3-summaryapp/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="/">
+
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="30%"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:#f90;fill-rule:evenodd;}</style></defs><title>AWS-Logo_White-Color</title><path class="cls-1" d="M14.09,10.85a4.7,4.7,0,0,0,.19,1.48,7.73,7.73,0,0,0,.54,1.19.77.77,0,0,1,.12.38.64.64,0,0,1-.32.49l-1,.7a.83.83,0,0,1-.44.15.69.69,0,0,1-.49-.23,3.8,3.8,0,0,1-.6-.77q-.25-.42-.51-1a6.14,6.14,0,0,1-4.89,2.3,4.54,4.54,0,0,1-3.32-1.19,4.27,4.27,0,0,1-1.22-3.2A4.28,4.28,0,0,1,3.61,7.75,6.06,6.06,0,0,1,7.69,6.46a12.47,12.47,0,0,1,1.76.13q.92.13,1.91.36V5.73a3.65,3.65,0,0,0-.79-2.66A3.81,3.81,0,0,0,7.86,2.3a7.71,7.71,0,0,0-1.79.22,12.78,12.78,0,0,0-1.79.57,4.55,4.55,0,0,1-.58.22l-.26,0q-.35,0-.35-.52V2a1.09,1.09,0,0,1,.12-.58,1.2,1.2,0,0,1,.47-.35A10.88,10.88,0,0,1,5.77.32,10.19,10.19,0,0,1,8.36,0a6,6,0,0,1,4.35,1.35,5.49,5.49,0,0,1,1.38,4.09ZM7.34,13.38a5.36,5.36,0,0,0,1.72-.31A3.63,3.63,0,0,0,10.63,12,2.62,2.62,0,0,0,11.19,11a5.63,5.63,0,0,0,.16-1.44v-.7a14.35,14.35,0,0,0-1.53-.28,12.37,12.37,0,0,0-1.56-.1,3.84,3.84,0,0,0-2.47.67A2.34,2.34,0,0,0,5,11a2.35,2.35,0,0,0,.61,1.76A2.4,2.4,0,0,0,7.34,13.38Zm13.35,1.8a1,1,0,0,1-.64-.16,1.3,1.3,0,0,1-.35-.65L15.81,1.51a3,3,0,0,1-.15-.67.36.36,0,0,1,.41-.41H17.7a1,1,0,0,1,.65.16,1.4,1.4,0,0,1,.33.65l2.79,11,2.59-11A1.17,1.17,0,0,1,24.39.6a1.1,1.1,0,0,1,.67-.16H26.4a1.1,1.1,0,0,1,.67.16,1.17,1.17,0,0,1,.32.65L30,12.39,32.88,1.25A1.39,1.39,0,0,1,33.22.6a1,1,0,0,1,.65-.16h1.54a.36.36,0,0,1,.41.41,1.36,1.36,0,0,1,0,.26,3.64,3.64,0,0,1-.12.41l-4,12.86a1.3,1.3,0,0,1-.35.65,1,1,0,0,1-.64.16H29.25a1,1,0,0,1-.67-.17,1.26,1.26,0,0,1-.32-.67L25.67,3.64,23.11,14.34a1.26,1.26,0,0,1-.32.67,1,1,0,0,1-.67.17Zm21.36.44a11.28,11.28,0,0,1-2.56-.29,7.44,7.44,0,0,1-1.92-.67,1,1,0,0,1-.61-.93v-.84q0-.52.38-.52a.9.9,0,0,1,.31.06l.42.17a8.77,8.77,0,0,0,1.83.58,9.78,9.78,0,0,0,2,.2,4.48,4.48,0,0,0,2.43-.55,1.76,1.76,0,0,0,.86-1.57,1.61,1.61,0,0,0-.45-1.16A4.29,4.29,0,0,0,43,9.22l-2.41-.76A5.15,5.15,0,0,1,38,6.78a3.94,3.94,0,0,1-.83-2.41,3.7,3.7,0,0,1,.45-1.85,4.47,4.47,0,0,1,1.19-1.37A5.27,5.27,0,0,1,40.51.29,7.4,7.4,0,0,1,42.6,0a8.87,8.87,0,0,1,1.12.07q.57.07,1.08.19t.95.26a4.27,4.27,0,0,1,.7.29,1.59,1.59,0,0,1,.49.41.94.94,0,0,1,.15.55v.79q0,.52-.38.52a1.76,1.76,0,0,1-.64-.2,7.74,7.74,0,0,0-3.2-.64,4.37,4.37,0,0,0-2.21.47,1.6,1.6,0,0,0-.79,1.48,1.58,1.58,0,0,0,.49,1.18,4.94,4.94,0,0,0,1.83.92L44.55,7a5.08,5.08,0,0,1,2.57,1.6A3.76,3.76,0,0,1,47.9,11a4.21,4.21,0,0,1-.44,1.93,4.4,4.4,0,0,1-1.21,1.47,5.43,5.43,0,0,1-1.85.93A8.25,8.25,0,0,1,42.05,15.62Z"></path><path class="cls-2" d="M45.19,23.81C39.72,27.85,31.78,30,25,30A36.64,36.64,0,0,1,.22,20.57c-.51-.46-.06-1.09.56-.74A49.78,49.78,0,0,0,25.53,26.4,49.23,49.23,0,0,0,44.4,22.53C45.32,22.14,46.1,23.14,45.19,23.81Z"></path><path class="cls-2" d="M47.47,21.21c-.7-.9-4.63-.42-6.39-.21-.53.06-.62-.4-.14-.74,3.13-2.2,8.27-1.57,8.86-.83s-.16,5.89-3.09,8.35c-.45.38-.88.18-.68-.32C46.69,25.8,48.17,22.11,47.47,21.21Z"></path></svg>
+
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1719737447"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1719737447"></script>
+<script type="text/javascript">
+    
+        var baseurl = "\/\/localhost:1313\/\/vi";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1719737447"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/1-partyrock/" title="Thực hành với PartyRock" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/vi/1-partyrock/">
+           <b>1. </b> Thực hành với PartyRock
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/1-partyrock/1.1-register/" title="Làm quen với PartyRock" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/1-partyrock/1.1-register/">
+           <b> 1.1 </b> Làm quen với PartyRock
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/1-partyrock/1.2-createapp/" title="Tạo ứng dụng" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/1-partyrock/1.2-createapp/">
+           <b> 1.2 </b> Tạo ứng dụng
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/1-partyrock/1.3-summaryapp/" title="Ứng dụng tóm tắt nội dung" class="dd-item 
+        
+        active
+        
+        ">
+      <a href="/vi/1-partyrock/1.3-summaryapp/">
+           <b> 1.3 </b> Ứng dụng tóm tắt nội dung
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/1-partyrock/1.4-chatbot/" title="Ứng dụng chatbot" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/1-partyrock/1.4-chatbot/">
+           <b> 1.4 </b> Ứng dụng chatbot
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/1-partyrock/1.5-documentapp/" title="Ứng dụng chat bằng tập tin" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/1-partyrock/1.5-documentapp/">
+           <b> 1.5 </b> Ứng dụng chat bằng tập tin
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/1-partyrock/1.6-remixapp/" title="Khám phá và remix ứng dụng có sẵn" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/1-partyrock/1.6-remixapp/">
+           <b> 1.6 </b> Khám phá và remix ứng dụng có sẵn
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/1-partyrock/1.7-prompteng/" title="Hướng dẫn prompt engineering" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/1-partyrock/1.7-prompteng/">
+           <b> 1.7 </b> Hướng dẫn prompt engineering
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/1-partyrock/1.8-next/" title="Các bước tiếp theo" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/1-partyrock/1.8-next/">
+           <b> 1.8 </b> Các bước tiếp theo
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/2-langchain/" title="Thực hành với Bedrock &amp; LangChain" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/2-langchain/">
+          <b>2. </b>Thực hành với Bedrock &amp; LangChain
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/2-langchain/2.1-prep/" title="🏡 Các bước chuẩn bị" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/2-langchain/2.1-prep/">
+          🏡 Các bước chuẩn bị
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/vi/2-langchain/2.1-prep/bedrocksetup/" title="Amazon Bedrock Setup" class="dd-item ">
+        <a href="/vi/2-langchain/2.1-prep/bedrocksetup/">
+        Amazon Bedrock Setup
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/vi/2-langchain/2.1-prep/cloud9setup/" title="AWS Cloud9 Setup" class="dd-item ">
+        <a href="/vi/2-langchain/2.1-prep/cloud9setup/">
+        AWS Cloud9 Setup
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/vi/2-langchain/2.1-prep/labsetup/" title="Lab setup" class="dd-item ">
+        <a href="/vi/2-langchain/2.1-prep/labsetup/">
+        Lab setup
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/vi/2-langchain/2.1-prep/minimumiamperms/" title="Minimum IAM Permissions (for system admins)" class="dd-item ">
+        <a href="/vi/2-langchain/2.1-prep/minimumiamperms/">
+        Minimum IAM Permissions (for system admins)
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/2-langchain/2.8-bonus/" title="2.8 Bonus" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/2-langchain/2.8-bonus/">
+          2.8 Bonus
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/2-langchain/2.7-prompteng/" title="2.7 Prompteng" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/2-langchain/2.7-prompteng/">
+          2.7 Prompteng
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/2-langchain/2.6-security/" title="2.6 Security" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/2-langchain/2.6-security/">
+          2.6 Security
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/2-langchain/2.5-image/" title="2.5 Image" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/2-langchain/2.5-image/">
+          2.5 Image
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/2-langchain/2.4-text/" title="2.4 Text" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/2-langchain/2.4-text/">
+          2.4 Text
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/2-langchain/2.3-basic/" title="2.3 Basic" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/2-langchain/2.3-basic/">
+          2.3 Basic
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/2-langchain/2.2-foundational/" title="2.2 Foundational" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/2-langchain/2.2-foundational/">
+          2.2 Foundational
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://www.facebook.com/groups/awsstudygroupfcj/"><i class='fab fa-facebook'></i> AWS Study Group</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+        <li>
+          <a class="padding">
+            <i class="fas fa-language fa-fw"></i>
+          <div class="select-style">
+            <select id="select-language" onchange="location = this.value;">
+          
+          
+          
+              
+              
+                  
+                    
+                    
+                      <option id="en" value="//localhost:1313/1-partyrock/1.3-summaryapp/">English</option>
+                    
+                  
+              
+                  
+              
+          
+              
+              
+                  
+              
+                  
+                    
+                    
+                      <option id="vi" value="//localhost:1313/vi/1-partyrock/1.3-summaryapp/" selected>Tiếng Việt</option>
+                    
+                  
+              
+          
+        </select>
+        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          width="255px" height="255px" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255;" xml:space="preserve">
+          <g>
+            <g id="arrow-drop-down">
+              <polygon points="0,63.75 127.5,191.25 255,63.75 		" />
+            </g>
+          </g>
+        </svg>
+        </div>
+        </a>
+        </li>
+      
+      
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <left>
+    
+     <b> Workshop</b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7920860&style=0038&nbdigits=9&type=page&initCount=0" title="Migrate" Alt="web counter"   border="0" /></a>  <br>
+     <b> <a href="https://cloudjourney.awsstudygroup.com/">Cloud Journey</a></b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7830807&style=0038&nbdigits=9&type=page&initCount=0" title="Total CLoud Journey" Alt="web counter"   border="0"   />
+     
+</left>
+<left>
+    <br>
+    <br>
+        <b> Last Updated </b> <br>
+        <i><font color=orange>30-01-2022</font></i>
+    </left>
+    <left>
+        <br>
+        <br>
+            <b> Team </b> <br>
+           
+            <i> <a href="https://www.linkedin.com/in/sutrinh/"  style="color:orange">Sử Trịnh  </a> <br>
+                <a href="https://www.linkedin.com/in/jotaguy"  style="color:orange">Gia Hưng </a> <br>
+                <a href="https://www.linkedin.com/in/hiepnguyendt"  style="color:orange">Thanh Hiệp </a>
+               
+        </i>
+        </left>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/vi/'>Tạo Gen AI bằng Amazon Bedrock và LangChain</a> > <a href='/vi/1-partyrock/'>Thực hành với PartyRock</a> > Ứng dụng tóm tắt nội dung
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Ứng dụng tóm tắt nội dung
+            </h1>
+          
+
+        
+
+
+
+	<p>Chạy thử ứng dụng tại đây: <a href="https://partyrock.aws/u/js2222/aw3_JHzyG/Content-Summarizer">https://partyrock.aws/u/js2222/aw3_JHzyG/Content-Summarizer</a></p>
+<h4 id="giới-thiệu">Giới thiệu</h4>
+<p>Chúng ta sẽ tự tạo một ứng dụng tóm tắt nội dung đơn giản. Ngoài tính năng tạo app bằng câu lệnh miêu tả, PartyRock cũng cho phép người dùng tạo ứng dụng bằng <strong>app editor</strong> trên website.</p>
+<p>Các bước sau đây hướng dẫn sử dụng tiện ích <strong>User input</strong> và <strong>Text generation</strong> để tự động tạo ra tóm tắt chi tiết và tóm tắt một dòng từ các nội dung dài.</p>
+<hr>
+<h4 id="tạo-ứng-dụng-trống">Tạo ứng dụng trống</h4>
+<ol>
+<li>Go to <a href="https://partyrock.aws">https://partyrock.aws</a> và đăng nhập.</li>
+<li>Chọn nút <strong>Build your own app</strong>, chọn <strong>Create empty app</strong>.</li>
+</ol>
+<p><img alt="pr" src="/images/1-PartyRock/012-PartyRock.png"></p>
+<ol start="3">
+<li>Xem lại ứng dụng vừa tạo và tên ứng dụng ngẫu nhiên.</li>
+</ol>
+<p><img alt="pr" src="/images/1-PartyRock/013-PartyRock.png"></p>
+<ol start="4">
+<li>Đổi tên ứng dụng thành <code>Content Summarizer</code></li>
+</ol>
+<p><img alt="pr" src="/images/1-PartyRock/014-PartyRock.png"></p>
+<h4 id="thêm-tiện-tính-user-input-và-text-generation">Thêm tiện tính User input và Text generation</h4>
+<ol start="5">
+<li>Chọn nút <strong>+ Add widget</strong>, chọn mục <strong>Static Text</strong></li>
+</ol>
+<p><img alt="pr" src="/images/1-PartyRock/015-PartyRock.png"></p>
+<ol start="6">
+<li>Sửa các đặc tính của Static Text.
+<ul>
+<li>
+<p>Đặt tên tiện ích <code>Welcome</code></p>
+</li>
+<li>
+<p>Đổi Content:</p>
+<pre tabindex="0"><code class="language-command" data-lang="command"># Welcome to the Content Summarizer application!
+
+Instructions:
+
+1. Paste your content
+2. Get your summaries!
+
+## WARNING: Never share sensitive information when building or using a PartyRock app. This includes personal information and internal company information.
+</code></pre></li>
+<li>
+<p>Có thể điều chỉnh kích cỡ của các tiện ích bằng cách kéo từ góc phải bên dưới ô tiện ích.</p>
+</li>
+<li>
+<p>Bấm <strong>Save</strong></p>
+</li>
+</ul>
+</li>
+</ol>
+<p><img alt="pr" src="/images/1-PartyRock/016-PartyRock.png"></p>
+
+<div class="notices note" ><p>Tiện ích Static Text dùng ngôn ngữ <strong>Markdown</strong> để hiển thị nội dung.</p>
+</div>
+
+<ol start="7">
+<li>Chọn nút <strong>+ Add widget</strong>, chọn <strong>User Input</strong></li>
+</ol>
+<p><img alt="pr" src="/images/1-PartyRock/017-PartyRock.png"></p>
+<ol start="8">
+<li>
+<p>Sửa các đặc tính của tiện ích User Input.</p>
+<ul>
+<li>Đặt <strong>Widget title</strong> là <code>Paste your content here</code></li>
+<li>Đặt <strong>Placeholder</strong> là <code>Content to summarize (NO SENSITIVE CONTENT)</code></li>
+<li>Chọn <strong>Save</strong>.</li>
+</ul>
+</li>
+</ol>
+<p><img alt="pr" src="/images/1-PartyRock/018-PartyRock.png"></p>
+<h4 id="thêm-các-tiện-ích-ai">Thêm các tiện ích AI</h4>
+<ol start="9">
+<li>
+<p>Chọn nút <strong>+ Add widget</strong>, sau đó chọn <strong>Text Generation</strong></p>
+</li>
+<li>
+<p>Sửa các đặc tính của tiện ích Text Generation.</p>
+<ul>
+<li>Đặt <strong>Widget title</strong> là <code>Detailed summary</code></li>
+<li>Đặt <strong>Model</strong> là <code>Command</code></li>
+<li>Trong <strong>Prompt</strong>, nhập <code> Write a detailed summary based on this content:</code>, nhập @ và chọn <code>Paste your content here</code> để đặt input người dùng làm nội dung gốc.</li>
+<li>Chọn <strong>Save</strong>.</li>
+</ul>
+</li>
+</ol>
+<p><img alt="pr" src="/images/1-PartyRock/019-PartyRock.png"></p>
+<ol start="11">
+<li>
+<p>Điều chỉnh kích cỡ của tiện ích <strong>Detailed summary</strong> bằng cách kéo từ góc phải bên dưới ô tiện ích.</p>
+</li>
+<li>
+<p>Thêm tiện ích <strong>Text Generation</strong>.</p>
+</li>
+</ol>
+<p><img alt="pr" src="/images/1-PartyRock/020-PartyRock.png"></p>
+<ol start="13">
+<li>
+<p>Sửa các đặc tính của tiện ích Text Generation.</p>
+<ul>
+<li>Đặt <strong>Widget title</strong> là <code>One-line summary</code></li>
+<li>Đặt <strong>Model</strong> là <code>Claude 3 Sonnet</code></li>
+<li>Trong <strong>Prompt</strong>, nhập <code>Write a one-line summary based on this content:</code>, sau đó nhập <strong>@</strong> và chọn <code>Paste your content here</code> để đặt input người dùng làm nội dung gốc.</li>
+<li>Chọn vào mục <strong>Advanced settings</strong> và chỉnh <strong>Temperature</strong> thành <strong>0.5</strong> để tạo sự ngẫu nhiên cho mỗi câu trả lời của model.</li>
+<li>Chọn <strong>Save</strong>.</li>
+</ul>
+</li>
+</ol>
+<p><img alt="pr" src="/images/1-PartyRock/021-PartyRock.png"></p>
+<p><img alt="pr" src="/images/1-PartyRock/022-PartyRock.png"></p>
+<h4 id="test-the-app">Test the app</h4>
+<ol start="14">
+<li>
+<p>Sao chép đoạn sau vào ô <strong>Paste your content here</strong>.</p>
+<pre tabindex="0"><code class="language-command" data-lang="command">PartyRock, an Amazon Bedrock playground, is a shareable generative AI app building playground. Experiment with prompt engineering in a hands-on and fun way. In a short time, you can build, share, and remix apps, to get inspired while playing with generative AI. For example, you can:
+
+    Build an app to generate dad jokes on the topic of your choice.
+    Create the perfect playlist based on your musical tastes.
+    Recommend what to serve based on ingredients in your pantry.
+    Create and play a virtual trivia game online with friends from around the world.
+    Create an AI storyteller to guide your next fantasy -playing campaign.
+
+By building and playing with PartyRock apps, you learn about the fundamental techniques and capabilities needed to get started with generative AI, including understanding how a foundation model responds to a given prompt, experimenting with different text-based prompts, and chaining prompts together. Anyone can access PartyRock through its intuitive web-based UI. For anyone interested in learning the fundamental skills needed to harness the power of generative AI, PartyRock uses Amazon Bedrock to create an accessible environment for experimentation with powerful foundational models (FMs). The tool builds confidence by providing new PartyRock users with free trial use for a limited time, and the PartyRock Guide helps learners extend their knowledge. Builders who are ready to move into production can proceed to the Bedrock console using the basic prompts and skills developed in PartyRock.
+
+Any builder can experiment with PartyRock by creating a profile using a social login from amazon.com, Apple, or Google. PartyRock is separate from the AWS console and does not require an AWS account to get started.
+PartyRock is for EVERYONE. It has been designed in a way that is friendly and accessible to builders of all skill levels, particularly those who have limited experience with generative AI. Even if you have no coding experience, you can use text-based prompts to experiment with foundation models and create your own generative AI-powered apps. Developers can explore model capabilities and refine prompt engineering techniques in PartyRock without managing API calls.
+</code></pre></li>
+</ol>
+<p><img alt="pr" src="/images/1-PartyRock/023-PartyRock.png"></p>
+
+<div class="notices warning" ><p>Đừng bao giờ chia sẻ các thông tin cá nhân nhạy cảm trong snapshot hoặc PartyRock.</p>
+</div>
+
+
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/vi/1-partyrock/1.2-createapp/" title="Tạo ứng dụng"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/vi/1-partyrock/1.4-chatbot/" title="Ứng dụng chatbot" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1719737447"></script>
+    <script src="/js/perfect-scrollbar.min.js?1719737447"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1719737447"></script>
+    <script src="/js/jquery.sticky.js?1719737447"></script>
+    <script src="/js/featherlight.min.js?1719737447"></script>
+    <script src="/js/highlight.pack.js?1719737447"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1719737447"></script>
+    <script src="/js/learn.js?1719737447"></script>
+    <script src="/js/hugo-learn.js?1719737447"></script>
+
+    <link href="/mermaid/mermaid.css?1719737447" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1719737447"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-158079754-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </body>
+</html>

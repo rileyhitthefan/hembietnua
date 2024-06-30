@@ -4,7 +4,7 @@ date: 2024-06-27T14:35:46+07:00
 draft: false
 weight: 2
 ---
-We will be using [AWS Cloud9](https://aws.amazon.com/cloud9/) as our integrated development environment for this workshop. AWS Cloud9 is one option for building applications with Amazon Bedrock - you can also use your own development tools (VS Code, PyCharm, etc.), [Amazon SageMaker Studio](https://aws.amazon.com/sagemaker/studio/) , or Jupyter Notebooks.
+We will be using [AWS Cloud9](https://aws.amazon.com/cloud9/) as our integrated development environment for this workshop. AWS Cloud9 is one option for building applications with Amazon Bedrock - you can also use your own development tools (VS Code, PyCharm, etc.), [Amazon SageMaker Studio](https://aws.amazon.com/sagemaker/studio/) ,or Jupyter Notebooks.
 
 Below we will configure an AWS Cloud9 [enviroment](https://docs.aws.amazon.com/cloud9/latest/user-guide/environments.html) in order to build and run generative AI applications. An environment is a web-based integrated development environment for editing code and running terminal commands.
 

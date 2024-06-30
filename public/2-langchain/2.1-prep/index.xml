@@ -20,7 +20,7 @@
       <link>//localhost:1313/2-langchain/2.1-prep/cloud9setup/</link>
       <pubDate>Thu, 27 Jun 2024 14:35:46 +0700</pubDate>
       <guid>//localhost:1313/2-langchain/2.1-prep/cloud9setup/</guid>
-      <description>We will be using AWS Cloud9 as our integrated development environment for this workshop. AWS Cloud9 is one option for building applications with Amazon Bedrock - you can also use your own development tools (VS Code, PyCharm, etc.), Amazon SageMaker Studio , or Jupyter Notebooks.&#xA;Below we will configure an AWS Cloud9 enviroment in order to build and run generative AI applications. An environment is a web-based integrated development environment for editing code and running terminal commands.</description>
+      <description>We will be using AWS Cloud9 as our integrated development environment for this workshop. AWS Cloud9 is one option for building applications with Amazon Bedrock - you can also use your own development tools (VS Code, PyCharm, etc.), Amazon SageMaker Studio ,or Jupyter Notebooks.&#xA;Below we will configure an AWS Cloud9 enviroment in order to build and run generative AI applications. An environment is a web-based integrated development environment for editing code and running terminal commands.</description>
     </item>
     <item>
       <title>Lab setup</title>
