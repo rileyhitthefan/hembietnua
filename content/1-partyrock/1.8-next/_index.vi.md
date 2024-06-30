@@ -2,7 +2,7 @@
 title: "Các bước tiếp theo"
 date: 2024-06-28T11:10:54+07:00
 draft: true
-weight : 1
+weight : 8
 chapter: false
 pre : " <b> 1.8 </b> "
 ---

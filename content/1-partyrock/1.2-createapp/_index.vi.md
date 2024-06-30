@@ -2,7 +2,7 @@
 title: "Tạo ứng dụng"
 date: 2024-06-27T14:33:57+07:00
 draft: true
-weight : 1
+weight : 2
 chapter: false
 pre : " <b> 1.2 </b> "
 ---

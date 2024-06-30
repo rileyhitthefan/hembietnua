@@ -2,7 +2,7 @@
 title: "Khám phá và remix ứng dụng có sẵn"
 date: 2024-06-27T14:34:56+07:00
 draft: true
-weight : 1
+weight : 6
 chapter: false
 pre : " <b> 1.6 </b> "
 ---

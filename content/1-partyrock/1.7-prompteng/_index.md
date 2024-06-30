@@ -2,7 +2,7 @@
 title: "Prompt engineering guide"
 date: 2024-06-27T14:35:13+07:00
 draft: true
-weight : 1
+weight : 7
 chapter: false
 pre : " <b> 1.7 </b> "
 ---

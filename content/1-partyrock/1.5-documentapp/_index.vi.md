@@ -2,7 +2,7 @@
 title: "Ứng dụng chat bằng tập tin"
 date: 2024-06-27T14:34:42+07:00
 draft: true
-weight : 1
+weight : 5
 chapter: false
 pre : " <b> 1.5 </b> "
 ---

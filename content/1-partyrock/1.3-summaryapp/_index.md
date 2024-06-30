@@ -2,7 +2,7 @@
 title: "Content summarizer app"
 date: 2024-06-27T14:34:27+07:00
 draft: true
-weight : 1
+weight : 3
 chapter: false
 pre : " <b> 1.3 </b> "
 ---

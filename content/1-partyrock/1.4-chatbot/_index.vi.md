@@ -2,7 +2,7 @@
 title: "Ứng dụng chatbot"
 date: 2024-06-27T14:39:49+07:00
 draft: true
-weight : 1
+weight : 4
 chapter: false
 pre : " <b> 1.4 </b> "
 ---
