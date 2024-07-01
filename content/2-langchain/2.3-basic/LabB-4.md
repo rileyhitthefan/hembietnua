@@ -10,7 +10,7 @@ In this lab, we will build a simple chatbot with **Amazon Bedrock, LangChain, an
 
 **Amazon Bedrock** (and **LLMs** in general) don’t have any concept of state or memory. Any chat history has to be tracked externally and then passed into the model with each new message. We are using LangChain's **ConversationSummaryBufferMemory** class to track chat history. Since there is a limit on the number of tokens that can be processed by the model, we need to prune the chat history so there is enough space left to handle the user's message and the model's responses. **ConversationSummaryBufferMemory** supports this by tracking the most recent messages and summarizing the older messages.
 
-An important difference between this lab and the [retrieval-augmented generation lab](LabB-3.md): the responses from this chatbot are based purely on the underlying foundation model, without any supporting data source. So the chatbot's messages can potentially include made-up responses (hallucination). In [a later lab](LabI-1.md), we will create a more powerful chatbot that incorporates the retrieval-augmented generation pattern to return more accurate responses.
+An important difference between this lab and the [retrieval-augmented generation lab](LabB-3.md): the responses from this chatbot are based purely on the underlying foundation model, without any supporting data source. So the chatbot's messages can potentially include made-up responses (hallucination). In [a later lab](../2.4-text/LabI-1.md), we will create a more powerful chatbot that incorporates the retrieval-augmented generation pattern to return more accurate responses.
 
 {{% notice note %}}
 **Just want to run the app?**\
