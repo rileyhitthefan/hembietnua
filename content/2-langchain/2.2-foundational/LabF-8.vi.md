@@ -116,8 +116,4 @@ python bedrock_embedding.py
 
 ![embedding](/images/2-Bedrock/F-8/2.png)
 
-{{% notice tip %}}
-**Congratulations!**\
-You have successfully demonstrated Amazon Titan Embeddings and vector similarities!
-{{% /notice %}}
 

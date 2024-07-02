@@ -1,5 +1,5 @@
 ---
-title: "AWS Cloud9 Setup"
+title: "Chuẩn bị AWS Cloud9"
 date: 2024-06-27T14:35:46+07:00
 draft: false
 weight: 2

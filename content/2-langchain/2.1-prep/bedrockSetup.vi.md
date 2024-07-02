@@ -1,5 +1,5 @@
 ---
-title: "Amazon Bedrock Setup"
+title: "Chuẩn bị Amazon Bedrock"
 date: 2024-06-27T14:35:46+07:00
 draft: false
 weight: 1

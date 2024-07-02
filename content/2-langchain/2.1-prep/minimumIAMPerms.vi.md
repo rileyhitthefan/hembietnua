@@ -1,5 +1,5 @@
 ---
-title: "Minimum IAM Permissions (for system admins)"
+title: "Minimum IAM Permissions (cho quản trị viên)"
 date: 2024-06-27T14:35:46+07:00
 draft: false
 weight: 4

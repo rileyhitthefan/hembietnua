@@ -11,7 +11,7 @@ weight: 9
 Streamlit rất phù hợp để tạo các nguyên mẫu gen AI. Ứng dụng của bạn có thể chạy từ CLI bằng lệnh streamlit run. Xem thêm về Streamlit tại [đây](https://docs.streamlit.io/library/get-started).
 
 ## Tạo app Streamlit
-1.  Vào thư mục **workshop/labs/simple_streamlit**, mở file **simple_streamlit_app.py**
+1. Vào thư mục **workshop/labs/simple_streamlit**, mở file **simple_streamlit_app.py**
 
 ![Steamlit](/images/2-Bedrock/F-9/1.png)
 

@@ -1,5 +1,5 @@
 ---
-title: "Lab setup"
+title: "Setup mội trường"
 date: 2024-06-27T14:35:46+07:00
 draft: false
 weight: 3
