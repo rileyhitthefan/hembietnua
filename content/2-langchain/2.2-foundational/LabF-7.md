@@ -1,4 +1,5 @@
 ---
+---
 title: "Lab F-7: Streaming API"
 date: 2024-06-28T15:18:11+07:00
 draft: false
@@ -25,7 +26,7 @@ import json
 import boto3
 ```
 
-1. Initialize the Bedrock client library.
+3. Initialize the Bedrock client library.
 
    - This creates a Bedrock client.
 
