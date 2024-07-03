@@ -9,6 +9,7 @@ Hoàn thành [Các bước chuẩn bị](../2.1-prep/) trước khi tiến hành
 {{% /notice %}}
 
 Những bài thực hành này không yêu cầu kinh nghiệm sử dụng Amazon Bedrock, LangChain, hay Streamlit; và sẽ giới thiệu các mẫu thiết yếu làm nền tảng cho các tác vụ làm việc với model nền.
+
 Lab này không yêu cầu thêm các nền tảng hỗ trợ ngoài gọi đến Bedrock API. Bạn có thể làm lab tuỳ thứ tự.
 
 - [Lab B-1: Tạo văn bản](LabB-1.md)
