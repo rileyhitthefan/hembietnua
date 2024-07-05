@@ -23,4 +23,5 @@
  6. [Security & Safeguards labs](2-langchain/2.6-security/)
  7. [Prompt engineering labs](2-langchain/2.7-prompteng/)
  8. [Bonus labs](2-langchain/2.8-bonus/)
- 9. [Clean-up]()
+
+##### **[Clean Up](cleanup)**
