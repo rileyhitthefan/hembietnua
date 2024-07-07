@@ -36,7 +36,7 @@ Chatbot với RAG dùng cho:
 
 Ứng dụng gồm 2 file: 1 file front-end Streamlist, 1 file cho các thự viện hỗ trợ để gọi API Bedrock.
 
-## Create the library script
+## Tạo script thư viện
 Tạo thư viện hỗ trỡ để kết nối front-end Streamlit đến back-end Bedrock.
 
 1. Vào thư mục **workshop/labs/rag_chatbot**, mở file **rag_chatbot_lib.py**

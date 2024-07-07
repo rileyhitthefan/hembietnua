@@ -35,7 +35,7 @@ Mẫu chatbot có thể dùng cho:
 
 Ứng dụng gồm 2 file: 1 file front-end Streamlist, 1 file cho các thự viện hỗ trợ để gọi API Bedrock.
 
-## Create the library script
+## Tạo script thư viện
 Tạo thư viện hỗ trỡ để kết nối front-end Streamlit đến back-end Bedrock.
 
 1. Vào thư mục **workshop/labs/chatbot**, mở file **chatbot_lib.py**
