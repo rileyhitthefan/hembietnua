@@ -19,7 +19,7 @@ So với phần [retrieval-augmented generation lab](LabB-3.md), các câu trả
 Đến mục [Chạy ứng dụng tạo sẵn.](#run-the-streamlit-app)
 {{% /notice %}}
 
-### Use cases
+### Ứng dụng
 Mẫu chatbot có thể dùng cho:
 - Hội thoại tương tác đơn giản với người dùng, không yêu cầu kiến thức hoặc dữ liệu chuyên môn
 
